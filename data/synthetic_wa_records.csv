@@ -1,0 +1,501 @@
+first_name,last_name,phone_number,street,county,email,ID,dob,date,val1,val2,val1_CI
+Hoover,Swift,1-820-530-6339,642 72th Avenue W,Pierce County,oo'connell@gmail.com,238-81-8708,1960-06-05,2024-02-24,1,1,0.99-1
+Jerimy,Hammes,120-107-6198,8085 Noemie Way,Clallam County,krajcik.glynn@yahoo.com,163-43-7463,1940-10-31,09/14/24,0.34,0.018,0.34-0.35
+Emilee,Ferry,1-037-411-3655x17041,3776 5th St. NE,Franklin County,dessa19@llc.org,781-67-7952,1970-08-10,2025/01/10,0.964,0.914,0.88-0.99
+Brittany,Cremin,133.055.7951,310  Walsh Parks Drive,Franklin County,kschamberger@gleichner.com,889-26-9781,2010-09-03,2025-08-20,0.924,0.677,0.9-0.93
+John,Kulas,(964)067-0977x7122,784 West Sporer Ste,Pierce County,tromp.jeryl@schmeler.com,767-31-0340,1937-08-01,04/14/2024,0.825,1,0.8-0.84
+Unknown,Jakubowski,1-285-564-3248x12022,024 Kunze Pl SW,Clark County,benita54@llc.biz,331-49-2985,2017-04-10,2025/06/20,0.703,0.621,0.65-0.74
+Turner,Rodriguez,381.581.1622x5862,338 69th Ave.,Benton County,nitzsche.lue@yahoo.com,190-84-3572,2016-02-26,04/13/25,0.349,0.496,0.34-0.37
+Tomika,Marks,1-967-598-3721,155 W First St Apt. 996,King County,david.hegmann@corwin.net,453-96-0906,2019-01-31,04/19/2024,0.06,0.48,0.01-0.09
+Willaim,Reilly,1-986-101-1561,4873 Shanika Place South,Snohomish County,noreta.nader@yahoo.com,049-09-4282,2004-03-05,07/11/2025,0.454,1,0.42-0.47
+Corene,Lowe,(794)509-1258,67568 South Lang Ste,King County,evalena.hoppe@hotmail.com,145-86-8348,2001-08-07,2025-07-23,0.237,0.157,0.21-0.24
+Evelin,Murazik,+24(1)2042152467,8783 21th Street NE,King County,arno.price@gmail.com,711-31-4379,1994-07-17,01/08/2025,0.193,0.608,0.18-0.27
+Ruben,Prohaska,660-906-7418,91799 Torry Vista SouthEast,Pierce County,olson.dwight@abernathy.info,022-82-3463,1985-08-07,2024/04/20,0.997,0.996,0.99-1
+Camden,Kerluke,443-986-9818,42369 S Waelchi Ste,Clark County,christopher79@yahoo.com,813-25-2378,2019-06-26,03/13/25,0.834,0.565,0.8-0.85
+Brion,Schinner,1-297-937-9111x74731,87837 SouthWest Skiles Ave,Clark County,bkilback@hotmail.com,110-18-7141,1956-09-07,2025/04/18,0.575,0.589,0.51-0.66
+Eve,Hand,03029639404,.,Pierce County,hassan60@yahoo.com,567-95-9399,1982-10-06,12/07/2024,1,0.911,0.97-1
+Haden,Reinger,098-485-0406x7693,23056 Schamberger Highway,Pierce County,schuppe.ismael@hotmail.com,779-12-8946,2012-04-10,01/16/2024,0.984,1,0.95-0.99
+Stephanie,Torphy,123-509-1981x94200,0620 12th St,King County,kourtney96@dickens.com,625-23-5974,1981-10-17,01/14/2024,0.357,0.171,0.3-0.37
+Debera,McGlynn,(576)650-7406x7846,24531 Lionel Dr NE,Spokane County,peffertz@gmail.com,879-46-3580,1934-05-31,03/20/2025,0.604,0.53,0.55-0.64
+Marquita,Bashirian,947-002-9503,84964 NorthEast Howe Market,Skagit County,jasiah67@douglas.org,324-37-5569,2024-02-06,04/13/2024,0.567,0.312,0.52-0.57
+Guido,Gerhold,1-735-803-6969x579,4067 Ruie Way NorthEast,Benton County,taylor.dickinson@and.net,408-32-1502,1958-04-17,2024-08-12,0.213,0.421,0.18-0.24
+Furman,Zieme,628.634.3576x37021,0502 Bartell Place South,Yakima County,auguste81@llc.net,465-53-4141,1950-08-30,2025-07-17,0.968,0.77,0.92-0.98
+Hildred,DuBuque,1-536-801-4341x25491,471 Gulgowski Hwy Apt. 565,Clark County,rogers07@gmail.com,584-54-1238,2014-06-12,2024-12-18,0.846,0.837,0.81-0.94
+Tyesha,Gutkowski,1-174-391-5396x43230,40101 Graciela St W,Yakima County,ashlynn09@ltd.com,378-73-5246,1990-06-10,12/07/2024,0.781,0.945,0.77-0.78
+Dejon,Schinner,1-345-199-3341x788,32555 Pollich Vista NE,Whitman County,corwin.d'amore@gmail.com,365-69-5143,1997-10-15,01/30/2024,0.999,0.117,0.99-1
+Pandora,Jacobs,(830)047-1365x7250,112 Wintheiser Vista E,King County,champlin.simmie@koelpin.com,654-37-2306,1939-03-21,2025/02/17,0.355,0.09,0.33-0.42
+Ednah,Klocko,(132)613-6161x54171,7344 NorthWest Thor Drive,Spokane County,derwin.lakin@hotmail.com,151-38-6247,2022-10-27,05/17/2024,0.261,0.151,0.25-0.26
+Benjamine,Feest,(628)474-6359x0484,21492 SW Damian St,King County,jaymes58@weissnat.org,374-37-5667,2020-07-02,2025/04/11,0.363,0.411,0.34-0.38
+Romello,Mertz,768.965.0410x0338,0258 13th St,King County,saundra.stokes@and.com,168-84-7917,2018-01-19,2025-04-29,0.112,0.405,0.08-0.15
+Trisha,Schuster,365.037.7272,247 SouthWest 66th Ave,Cowlitz County,cbahringer@effertz.com,434-24-0098,1935-11-26,02/28/25,0.009,0.122,0-0.02
+Maximiliano,Stark,255.283.5249,82404 Parlee Pl Apt. 836,Pierce County,texie28@ziemann.com,684-25-8178,1981-06-02,04/11/2025,0.763,0.013,0.76-0.79
+Julia,Muller,885-440-0869x6978,6823 North Reichert Avenue,Snohomish County,patty.hegmann@hotmail.com,451-19-6310,1979-06-23,05/25/2025,0.931,0.998,0.86-0.97
+Aggie,Kshlerin,(205)934-1635,121414,King County,migdalia26@plc.com,245-66-3057,2022-09-15,2024/07/07,0.258,0.603,0.24-0.27
+Effie,Ward,625-074-2638x40610,604 34th St. Apt. 315,King County,dnader@douglas.com,173-93-4926,1960-12-20,07/18/2024,0.442,0.639,0.39-0.46
+Caren,Towne,021.301.1623x781,33768 Hyatt Road S Apt. 490,Skagit County,bnitzsche@llc.com,456-70-5753,1938-05-09,2025-03-25,0.491,0.724,0.4-0.5
+Lesia,Cummings,1-586-682-2892,887 Gene Highway NorthWest,KingCounty,purdy.debrah@and.net,120-73-0225,2009-08-20,01/01/2024,0.044,0.261,0.02-0.1
+Leana,Leuschke,(563)166-8152x57758,2054 West Elouise Street,Pierce County,witting.titus@rogahn.biz,529-87-7631,1981-10-09,2025/07/11,1,1,0.97-1
+Stefanie,Effertz,381-929-4684x0875,629 Langworth Blvd,Whatcom County,wfeil@yahoo.com,165-68-2317,2021-05-04,2025-04-05,0.018,0,0-0.03
+Annalise,Mills,1-216-894-6343,84270 NorthWest 73th Street,Mason County,dedrick23@yahoo.com,423-48-4052,1961-10-05,2025-07-09,0.712,0.973,0.67-0.72
+Abbigail,Gaylord,1-882-860-9256x375,202 NE 72th Ave,King County,swunsch@hessel.com,390-70-3473,1938-10-26,07/23/25,0.225,0.526,0.14-0.24
+Jamil,Dare,815.600.9715,01868 Lott Blvd SW,Thurston County,marla.hilpert@plc.net,677-14-7975,1955-12-23,08/02/2025,0.001,0.088,0-0.06
+Alwina,Crooks,1-861-122-3193x19822,519 Walter Mount Apt. 558 Pl Apt. 558,Clark County,hahn.jordi@llc.com,405-07-3073,1974-01-07,08/15/2024,0.701,0.456,0.67-0.72
+Fernand,Schinner,1-474-819-6144,student,Snohomish County,oaufderhar@shields.com,156-68-4141,1935-02-09,02/06/2025,0.975,1,0.97-1
+Tatyanna,Simonis,1-406-169-5989x811,982 Judah Street NorthEast,Benton County,rgraham@yahoo.com,212-14-1860,2012-04-30,2024-05-09,0.311,0.76,0.27-0.34
+Trae,McClure,(994)858-1629x34847,7268 William Way,King County,hobert56@and.com,632-63-3159,1952-11-28,03/01/2025,0.068,0.646,0.05-0.12
+Debby,Rogahn,1-588-404-7093x013,6771 72th Avenue,Adams County,algernon48@legros.com,210-92-9715,1970-06-22,03/28/2024,0.848,1,0.84-0.94
+Myles,Jacobs,1-184-895-3288x548,76114 East Boyle Drive,Snohomish County,schmidt.mindi@hahn.net,374-16-8013,1996-01-27,07/30/25,0.879,0.999,0.82-0.88
+Hymen,Ziemann,(998)792-3930,8009 Gleichner Ste,Island County,nataly.larkin@gmail.com,830-02-9881,1936-05-08,2024/02/21,0.721,0.753,0.65-0.74
+Danniel,Daugherty,+50(2)3784470932,193 NW Graham Ln,Pierce County,myrtice06@hotmail.com,389-26-6724,1939-10-06,2025-04-27,0.923,1,0.9-0.93
+Contina,Barrows,+66(5)0326496786,91562 West Virgle Blvd,Yakima County,corine36@yahoo.com,743-38-3431,1991-06-15,07/20/2025,0.913,0.664,0.9-1
+Idella,Kuhlman,(094)226-7923,859 Nellie Highway Apt. 612,Kitsap County,camilo08@plc.com,018-37-1375,1985-02-08,2025-02-08,0.55,0.511,0.53-0.56
+Spring,Wisozk,503.542.7460x28434,6527 S Koch Boulevard,King County,roslyn21@gmail.com,131-54-6277,1937-05-31,2024/12/20,0.351,0.686,0.33-0.36
+Hadley,Gutmann,+37(8)3393734247,53327 Abshire Way West Apt. 674,Pierce County,carlota.buckridge@group.info,205-88-4380,2012-12-27,05/17/2024,1,1,0.95-1
+Benton,Reichel,695.023.2149,39646 NE Romaguera Market Apt. 359,Douglas County,ardath42@gmail.com,657-19-4623,1994-10-09,2025/03/03,0.558,0.66,0.53-0.62
+Wava,Jerde,07250058045,622 Davie Highway N,Yakima County,caryl.roob@spencer.com,660-55-6568,1931-02-19,2024/07/22,0.495,0.994,0.45-0.5
+Elaine,Hessel,507.217.9502x71597,305 South Theophile Pl Apt. 061,Whatcom County,callie.kohler@gmail.com,163-83-6252,2019-03-14,04/01/2024,0.024,0.256,0-0.09
+Osborn,Hodkiewicz,081.619.3012,324 Lilburn Avenue SW,Skagit County,heriberto31@erdman.com,668-90-7500,1992-05-07,2025-04-14,0.365,0.728,0.32-0.39
+Stafford,Olson,(422)892-3076x45275,6098 30th Ave. West,King County,emit15@yahoo.com,869-31-6234,1933-04-25,2024-08-18,0.283,0.433,0.27-0.29
+Vincenza,Batz,08300827591,62923 Dellar Groves Vista,Pierce County,sherman.rippin@bashirian.com,629-39-0640,1960-02-13,2025-01-12,0.998,0.989,0.94-1
+Deonte,Franecki,06627730041,93263 Ernestine Prairie Pl E,Pierce County,giles99@plc.com,826-53-0115,2011-11-13,07/30/2025,1,0.998,0.96-1
+Derl,Koelpin,1-625-241-5267,5831 NorthEast Lavonne Alley Boulevard,Yakima County,marland.collier@and.com,132-73-6282,1989-05-07,08/04/2024,0.983,0.983,0.96-1
+Orpha,Lynch,356-957-7609x52688,2506 E 67th Street Apt. 562,King County,senger.frieda@herman.com,746-16-6992,1941-07-23,12/09/2024,0.304,0.716,0.29-0.36
+Meggan,Goldner,534-544-7404x0418,271 SouthWest Runte Hwy,Franklin County,alf.gutmann@hotmail.com,695-61-5010,1997-02-06,2025-07-05,0.206,0.594,0.16-0.26
+Rocco,Farrell,01335132492,8489 2nd St W,King  County,iklocko@hotmail.com,855-68-8645,2014-11-16,2024/08/21,0.233,0.236,0.19-0.24
+Leonidas,Adams,512.458.5579x3179,38869 North Lolla Vista,Chelan County,hansen.cameron@hotmail.com,753-06-4786,1967-01-04,2024-02-27,0.623,0.635,0.6-0.65
+Karson,Crona,636-139-4824x7495,60799 74th Ave. North Apt. 951,Clark County,sydney.ortiz@yahoo.com,126-55-5820,2018-05-13,2025/01/10,0.511,0.202,0.49-0.59
+Ivy,Miller,1-848-471-5706,938 Cummings St SW Apt. 009,King County,xharber@and.org,613-37-7445,1980-04-26,2024-01-30,0.505,0.155,0.44-0.51
+Terrell,Jenkins,1-994-147-0755x8095,500 East Margarita Market,Pierce County,shyann.herman@ltd.info,482-86-3009,1941-09-16,04/08/2025,0.999,0.887,0.97-1
+Becky,Lindgren,+17(5)2238380705,54026 South Ina Parkways Ste,King County,vandervort.ernest@yahoo.com,409-95-0042,1993-05-03,03/30/2025,0.228,0.384,0.22-0.28
+Fiona,D'Amore,938-712-4850x586,789 NE Muller Ln,Benton County,hamill.leyla@inc.net,199-74-0793,1930-09-10,08/26/2024,0.248,0.487,0.16-0.25
+Edie,Kutch,1-993-700-7438x6724,982 NW Bernhard Blvd,King County,nicolette13@casper.com,559-89-1174,1954-08-26,01/06/24,0.547,0.374,0.53-0.58
+Betsey,DuBuque,1-449-983-0788x3446,025 SE Abe Dr Apt. 499,Pierce County,fkertzmann@gmail.com,820-11-8148,1984-12-04,2024-09-13,0.02,0.991,0-0.06
+Eli,Swaniawski,845-393-4180x35370,0238 Third St,King County,maybelle95@bechtelar.biz,130-71-5735,2009-03-20,2024/03/17,0.562,0.341,0.54-0.58
+Saul,Nolan,(584)473-3403x54790,89824 Cummings Boulevard SW,Snohomish County,arie05@yahoo.com,601-40-7171,1941-01-05,2025-02-19,1,0.722,0.97-1
+Cari,Orn,(417)202-2786x66093,3159 Wilderman Alley Apt. 385,Thurston County,ernser.nichol@plc.org,014-70-8282,1984-07-20,2025/06/25,0.68,0,0.65-0.72
+Tye,Kunze,1-238-949-0272x787,65220 Gusikowski Avenue,Pierce County,gil.fay@jast.com,137-31-1667,1945-08-21,01/28/2025,0.999,0.997,1-1
+Avah,Towne,865-949-2561,923 39th Ave. SouthWest,Skagit County,yolson@strosin.com,231-87-8103,2002-11-19,2024-07-31,0.523,0.454,0.46-0.56
+Luke,Hettinger,666-456-7116,0190 55th St SE,Benton County,beer.ilda@hotmail.com,751-86-8672,1939-11-15,2024-08-26,0.251,0.566,0.21-0.26
+Allyssa,Rempel,+52(9)0307646826,454 Hammes Rd SE,Snohomish County,gottlieb.elbert@gmail.com,390-40-9849,1955-04-11,2024-05-23,1,0.999,1-1
+Latrina,Larson,1-745-643-9218,806 South 29th St.,Kitsap County,lori.harber@leuschke.com,505-04-9179,1998-04-25,2025-08-21,0.041,0.094,0.02-0.08
+Frances,Johnston,03331813755,3823 North 47th Avenue Apt. 645,King County,loni55@yahoo.com,671-19-4926,2011-06-11,2025-02-11,0.54,0.606,0.53-0.54
+Dabney,Feeney,(888)281-1513x47044,104 Jeffery Dr,Clark County,tobie.brekke@baumbach.com,837-96-6738,1949-08-01,2025-04-29,0.35,0.661,0.35-0.38
+Ellie,Hansen,780.875.2002x10138,37405 27th St.,Skagit County,buel.lockman@yahoo.com,057-05-6592,1964-01-25,07/15/2024,0.678,0.257,0.61-0.71
+Macarthur,Nikolaus,+22(0)7709158449,0721 SouthEast Langworth Street,Kitsap County,sgreenholt@cummerata.com,714-11-8940,1951-07-14,2024/12/18,0.869,0.656,0.82-0.92
+Babette,McLaughlin,907-878-9537,645 North First Ave.,Yakima County,bernhard.annetta@gmail.com,790-55-8568,1987-07-26,06/30/2025,0.525,0.887,0.5-0.56
+Osbaldo,Baumbach,05067693550,063 SouthEast Maci Street Apt. 637,Pierce County,elvis90@gmail.com,569-06-8584,2006-09-11,01/30/2025,0.71,1,0.65-0.73
+Derrell,Schneider,135.073.8959,075 SouthEast 4th Ave,King County,hetty32@rutherford.com,113-99-2801,1973-09-10,2025-06-10,0.137,0.328,0.11-0.17
+Helene,Lindgren,008.896.6714x20217,1291 Braun St SouthEast,Grant County,waelchi.savion@gmail.com,112-24-9559,1934-11-24,12/24/2024,0.277,0.244,0.23-0.29
+Siobhan,Ledner,182-058-0183,.,King County,reinger.maddox@cole.com,447-40-2240,1967-10-23,2024/10/16,0.344,0.589,0.32-0.37
+Norval,Willms,719.165.0509x4234,35641 14th St,Clark County,lotta88@gleichner.com,550-77-1632,1957-05-17,09/24/2024,0.526,NA,0.51-0.54
+Eugenia,Herzog,681-646-8671x495,566  Spinka Highway,Skagit County,kadyn04@carter.net,653-79-6657,1972-07-22,2025-05-10,0.226,NA,0.22-0.29
+Dabney,Wintheiser,1-945-582-5850,5252 28th Ave. East,Thurston County,tgislason@upton.com,056-26-9375,1998-05-09,2024-11-24,0.006,0,0-0.02
+Doc,Keeling,(877)875-9829,4569 Turcotte Ste SouthEast,Pierce County,keon.jacobi@hotmail.com,291-36-0280,1995-11-11,07/19/2024,0.949,0.889,0.95-0.98
+Braelyn,Funk,1-885-526-4141x601,258 17th St,Whatcom County,rosenbaum.betty@yahoo.com,718-33-7088,1931-08-11,01/14/2025,0.264,0.95,0.26-0.28
+Aida,Windler,+18(1)4085048105,798 Mayert Hwy,Snohomish County,psimonis@inc.info,182-09-4971,1969-01-02,04/16/24,1,1,1-1
+Dell,Rice,(104)292-0963x70608,816 South Denesik Lane,Snohomish County,karyme.harvey@group.net,557-70-6241,1972-07-05,06/19/2025,0.993,1,0.98-1
+Burrel,Reynolds,00886024343,86871 29th Ave. Apt. 483,King County,ckovacek@ltd.com,319-33-1396,1993-12-23,2025-02-14,0.356,0.649,0.29-0.38
+Sannie,Kovacek,(729)076-0513x90140,18869 31th St. North,Pierce County,williamson.lennon@yahoo.com,262-09-7783,1971-12-22,2024/08/18,0.956,1,0.95-0.97
+Jack,Rau,715-684-4859x16109,20911 NorthEast Trinity Lane,Snohomish County,hconsidine@yahoo.com,016-05-4412,1997-08-19,2025/08/06,0.967,1,0.91-0.98
+Asberry,Ryan,809-646-8458x599,7857 Cherise Rd South,Adams County,haley.sibyl@gmail.com,451-49-9111,1983-08-07,2025/08/07,0.603,0.256,0.56-0.62
+Jonna,Wisozk,1-402-436-7222x71942,08113 SouthWest Labadie Street,Pierce County,lester.watsica@llc.biz,710-39-4943,2015-05-12,07/19/2025,1,0.362,1-1
+Lindsay,Friesen,641-589-2747,613 NE Tana Boulevard,Snohomish County,deckow.rand@and.com,183-46-8858,2022-11-14,2025/03/16,0.639,0.378,0.63-0.64
+Dwaine,Predovic,741.944.9760,70127 3rd Ave,Pierce County,schroeder.jakobe@llc.com,658-78-2560,2009-11-24,06/25/2025,1,0.999,0.99-1
+Tobias,Powlowski,04864993728,09751 Boyer Vista NorthEast,Pierce County,kate82@gerlach.com,029-83-9704,1964-01-27,2025-06-05,0.842,1,0.77-0.85
+Azariah,Heller,536.801.7190x042,59110 South Pouros Rd,Yakima County,auer.lovey@kerluke.net,364-49-2713,1963-03-11,01/06/24,0.95,N/A,0.91-1
+Presley,O'Reilly,(007)472-3025x949,433 Leah Branch Apt. 608 Place Apt. 608,King County,lupe76@inc.com,463-90-6554,1981-04-11,2024/11/30,0.887,0.604,0.87-0.95
+Adalberto,Larson,643-032-7733x08135,41070 S Armani Ave,Pierce County,vschumm@zemlak.org,141-76-9015,2016-07-22,04/15/2024,0.97,1,0.94-1
+Milissa,Stoltenberg,+30(5)0895503384,9612 NorthWest Nicky Well Pl,King County,lemma79@gmail.com,492-54-6619,2016-05-02,08/21/24,0.134,0.431,0.12-0.14
+Jean,Dach,1-979-508-4941x398,4724 Zulauf St,Snohomish County,illa81@thiel.com,825-49-8883,2022-11-09,2024/01/25,1,1,0.96-1
+Isam,Reinger,472-829-4421x014,7183 NorthEast Farrell Place Apt. 092,King County,pmann@yahoo.com,459-94-7757,1971-12-22,2025-04-02,0.397,0.18,0.36-0.43
+Alanzo,Huels,330.437.1555x4888,90610 Alberto Blvd,Skagit County,scummerata@mayert.com,806-18-9983,1942-10-21,05/19/2024,0.303,0.304,0.29-0.31
+Jonathan,Berge,1-477-898-2844,4819 NorthWest 16th St.,Lewis County,tito.koss@zieme.com,593-15-5176,1950-10-29,2024-09-18,0.481,0.314,0.41-0.48
+Maida,Bradtke,1-505-190-6469x44015,810 Bednar Dr Apt. 265,Pierce County,odin91@reichel.net,043-88-7824,1962-03-26,2025/02/08,1,1,0.94-1
+Davion,Terry,+05(9)4144691121,031 Tobie St,Yakima County,lolita.okuneva@ltd.com,146-59-9446,1946-10-22,06/18/24,0.682,0.978,0.64-0.7
+Vikki,Buckridge,980.472.8007,075 Dicki Drive,Pierce County,terry.luciana@littel.org,083-06-2045,2024-04-11,07/24/2025,0.974,1,0.96-1
+Chantal,Wolff,004-920-4623x148,85526 Hyatt Avenue South Apt. 283,Whatcom County,wiegand.jackson@larkin.com,407-49-9489,1990-10-16,2025-07-29,0.117,0.006,0.05-0.22
+Joyce,Harber,1-024-597-2114,169 18th Avenue SE,Clark County,uwilderman@gmail.com,295-37-4003,1998-07-18,2025-02-28,0.334,0.354,0.26-0.35
+Kristopher,Dibbert,569-338-5313,8286 Jeramie Vista,Skamania County,dickinson.alyson@ruecker.net,762-24-9991,1936-11-26,12/24/2024,0.942,0.79,0.94-1
+Beulah,Weimann,+59(8)6382128726,986 SW Andrea Rd Apt. 548,Clark County,mignon53@plc.com,130-21-0368,1989-02-08,01/09/24,0.453,0.485,0.42-0.48
+Jenna,Gibson,(763)470-4851,0891 SW Windler Alley,Snohomish County,ken.greenholt@gislason.com,646-51-1275,1939-07-09,02/04/2024,1,0.999,0.97-1
+Barb,Collier,846-185-2934x66368,406 Turner Road SouthEast,Snohomish County,qsipes@inc.com,787-21-9224,1971-06-24,02/18/2025,1,1,0.96-1
+Ronin,Torp,1-525-721-8311,8234 41th Street,Yakima County,deonta37@gmail.com,693-63-0126,1982-03-20,2025/06/11,0.886,0.281,0.83-0.9
+Ashlie,Crooks,636-989-7552x6400,695 NW Bins Drive,Garfield County,vbotsford@plc.com,175-03-1160,2010-04-01,12/14/2024,0.751,0.657,0.73-0.83
+Joana,Goldner,09647240891,65326 S 13th Ave,Clark County,fhand@daniel.com,391-15-2412,1970-03-25,12/05/2024,0.501,0.78,0.49-0.56
+Ciji,Bosco,972.944.9780x816,7382 S Schneider Ranch Road,Snohomish County,vonrueden.nada@gmail.com,102-68-4095,1936-05-11,2025-01-04,1,0.989,0.99-1
+Sampson,Rohan,1-230-847-9842x926,68222 Spurgeon Highway,King County,robbie09@hotmail.com,478-04-2959,2001-12-20,05/13/2024,0.606,0.054,0.58-0.62
+Starling,Abernathy,640-097-0148x59258,30819  Nicolas Unions Street,Spokane County,considine.reatha@moen.com,770-20-1172,1943-04-07,08/08/2025,0.337,.,0.33-0.4
+Halsey,Hodkiewicz,406.128.3658,71148 Dooley Highway South Apt. 895,Spokane County,caitlyn72@sporer.com,794-92-1680,1948-08-17,07/16/2025,0.553,0.466,0.54-0.58
+Derrick,Jaskolski,1-514-373-8946x27374,09090 West Caroline Blvd,King County,roger13@bartoletti.org,129-61-6480,2010-04-01,07/07/2025,0.677,0.043,0.61-0.7
+Bonnie,Purdy,763.335.4916,94670 SW Nathaly Lane,Walla Walla County,ursula.morissette@gmail.com,112-04-2087,1964-06-25,2024-08-21,0.011,NA,0-0.02
+Jade,Altenwerth,1-794-560-9407x644,34043 SW Gisselle Avenue,Clark County,bertram58@auer.org,110-76-2898,1987-08-06,08/15/2025,0.726,0.408,0.61-0.78
+Vicie,Konopelski,00840353237,36503 North 28th Ave.,Franklin County,langosh.zayne@gutkowski.org,013-40-6841,1977-12-24,12/21/24,0.385,0.568,0.37-0.39
+Martine,Hilll,(962)470-0585x56661,7399 SW 72th Ave.,Clark County,koelpin.dyan@yahoo.com,471-06-6641,1942-04-16,2024/09/06,0.55,0.222,0.47-0.55
+Olie,Bayer,(653)600-6497x5087,0858 51th Ave.,King County,qabernathy@yahoo.com,642-24-4945,1994-09-06,2025-05-22,0.812,0.196,0.74-0.87
+Tori,Kozey,+15(1)0504846077,611 Powlowski Landing Market SouthEast,Clark County,schmidt.harrold@gmail.com,643-60-4783,1995-07-09,12/26/24,0.579,0.692,0.55-0.58
+Thomasina,Senger,(650)349-7875x710,77880 1st Avenue West,Spokane County,ezekiel.weber@yahoo.com,380-36-5570,1956-07-07,03/04/2024,0.544,0.653,0.54-0.57
+Aryanna,O'Connell,167.273.8400,3857 Kuvalis Boulevard NW,Kittitas County,kimberely.stamm@nitzsche.com,253-54-6014,1949-07-27,05/02/2024,0.009,0.061,0-0.07
+Lacie,Kiehn,1-463-186-2904x798,75327 Manda Street SouthEast,King County,lesia99@yahoo.com,398-84-8890,1964-12-14,2025-08-29,0.031,0.508,0.01-0.03
+Marco,Glover,736-762-7285x93541,32221 65th Ave West,Thurston County,jleuschke@gmail.com,700-35-5739,2012-01-22,2025-01-28,0.01,0,0-0.01
+Lular,Champlin,(424)771-1107,628 Marla Road,Grant County,spinka.zion@llc.com,038-30-6016,1967-12-10,2024-11-11,0.157,0.332,0.15-0.16
+Percy,Goodwin,188.649.2316x136,047 Lesch St South Apt. 963,Snohomish County,reinger.angelica@connelly.info,252-76-6523,1951-08-24,01/16/2025,1,0.347,0.99-1
+Howard,Armstrong,243-479-9680,308 SE Wintheiser Place,Whitman County,amado30@yahoo.com,078-62-7112,1945-03-12,2025-06-24,0.556,1,0.52-0.59
+Orah,Cummings,545.230.5721x94244,7603 NE Moen Drive,Pacific County,ernie.russel@murphy.info,758-39-8868,2023-03-15,2024-10-09,0.44,0.151,0.41-0.46
+Rhett,Kertzmann,06624286534,71772 Cornelious Spurs Road SE,Grant County,dickinson.don@veum.com,143-75-6219,1963-04-22,04/28/2024,0.284,0.186,0.27-0.34
+Ray,Lueilwitz,(580)658-0076x118,84979 Jovany Boulevard North Apt. 752,Pierce County,rob14@yahoo.com,096-11-7159,1945-08-14,01/26/2025,0.86,1,0.83-0.88
+Regis,Sawayn,(791)783-0940,9503 NorthWest Prohaska Ln Apt. 789,Pierce County,rosemary20@gmail.com,858-34-4453,2022-05-04,2025/03/04,1,1,0.98-1
+Serina,Orn,806-203-0620x7158,10254 Charls St SE Apt. 354,Clark County,tromp.amerigo@zieme.com,353-42-7493,1992-03-14,12/24/24,0.642,0.688,0.6-0.72
+Verna,Greenfelder,(285)634-5534x1077,7322 Gorczany Market  Apt. 575,Spokane County,ryker.abbott@yahoo.com,706-45-7322,1954-04-22,2024-10-14,0.189,0.661,0.17-0.23
+Delila,Marquardt,08812946332,35356 Kub Pike Ave SW,Spokane County,theta63@gmail.com,711-32-6016,1994-01-14,2024-06-30,0.246,0.426,0.17-0.32
+Evelina,Rippin,461.257.2110,422 Otis Forge Apt. 994 Way Apt. 994,King County,klocko.dwaine@hotmail.com,770-53-8409,2000-01-17,12/19/2024,0.171,0.182,0.14-0.18
+Charle,Schamberger,910.216.4751x985,0490 Moen Pl E,King County,dgrimes@ltd.org,118-50-9474,2005-07-07,08/10/2024,0.535,0.59,0.53-0.54
+Baron,Bechtelar,673-483-5669x751,506 NorthEast Lou Avenue,Pierce County,xpadberg@daugherty.org,218-47-6590,2022-08-03,08/27/2025,0.783,1,0.73-0.85
+Simpson,Morar,03295585766,454 Pfeffer Vista,Yakima County,jkling@donnelly.com,640-59-1289,1955-12-16,2024-05-04,0.787,0.854,0.77-0.79
+Angelique,Roberts,477.944.4126,25942 59th Ave. N,King County,audriana87@beahan.com,606-64-7926,1966-04-27,09/02/2024,0.736,0.794,0.73-0.74
+Mellisa,Bahringer,108-666-1608x537,9835 W Wilkinson Pike Street,King County,cassin.danniel@and.info,029-05-6043,1936-10-27,04/30/2025,0.21,0.479,0.21-0.26
+Cari,Larkin,340-102-6824x586,71464 Metha Vista,Snohomish County,freeda.ortiz@gmail.com,648-47-5834,1946-10-20,2024-06-10,0.682,.,0.67-0.72
+Lindsay,Konopelski,1-051-053-4861,857 S Normand Dr,King County,dtorp@lindgren.com,031-55-3361,1972-04-01,07/15/2024,0.607,0.371,0.55-0.62
+Harvey,Fisher,1-432-805-5160,198 NorthEast Jonatan Blvd,Snohomish  County,tatianna.waelchi@gaylord.com,341-99-1662,1959-04-21,07/04/2025,0.878,0.593,0.85-0.96
+Azzie,Thompson,475.394.9816,7571 Nora Lane East Apt. 355,Spokane County,gdietrich@gmail.com,217-85-7006,1969-01-17,2024/12/31,0.773,0.254,0.72-0.79
+Allison,Anderson,376-699-8649x126,50152 Flatley Turnpike Place E,Snohomish County,wuckert.carolee@frami.org,057-27-0712,2007-06-21,2024-02-20,1,0.993,0.96-1
+Luana,Medhurst,131-662-0706,58440 SE Koelpin Blvd Apt. 213,Franklin County,elvira07@grant.biz,860-27-8416,1978-10-31,10/31/2024,0.565,0.875,0.52-0.64
+Maybell,Gleason,885-252-7117x457,9614 NW Lexus Place Apt. 650,Clark County,stroman.alda@daugherty.org,817-78-1247,1970-08-03,08/20/2025,0.424,0.63,0.42-0.44
+Shawna,Walker,356-073-8493x0995,76114 Dagny Place,Mason County,doreen.dickinson@yahoo.com,300-61-8925,1956-08-20,10/04/2024,0.241,0.799,0.19-0.27
+Nim,Homenick,(698)255-1521,11287 Kaitlyn Alley SouthWest,Pacific County,jaheim50@ltd.info,781-51-4300,1988-11-08,07/06/2024,0.069,0.346,0.05-0.11
+Perry,Dibbert,1-835-301-8452x7974,50136 Donal Avenue,Thurston County,tpaucek@bruen.org,596-49-5141,2014-08-27,2025/05/21,0.04,0.023,0.01-0.09
+Tobe,Reilly,880.753.9575x43387,460 Yadiel Boulevard E,Kitsap County,pinkey83@hotmail.com,550-53-2658,1949-11-02,04/07/2024,0.153,0.13,0.14-0.16
+Braedon,Kertzmann,976-137-2055,9313 Sage Fords Apt. 642 Pl NorthEast Apt. 642,King County,isadore.eichmann@mohr.org,603-41-7867,2013-06-30,2024/01/08,0.39,0.023,0.39-0.44
+Lilianna,Hessel,(157)216-6228x607,0394 SouthWest Eathel Greens Apt. 766 Vista Apt. 766,King County,jerrod.effertz@hotmail.com,124-56-6847,1952-03-11,03/18/2025,0.637,0.114,0.58-0.7
+Rhianna,Hudson,147.838.9068,1612 King St NE Apt. 724,King County,dach.pat@lakin.com,560-33-4330,2004-06-27,2024/10/28,0.116,0.26,0.12-0.15
+Othel,Gleichner,773.449.9052,0560 SouthEast Gibson Drive Apt. 236,King County,tillman.carl@ltd.net,392-42-3840,1978-03-09,06/25/2025,0.175,0.147,0.12-0.22
+Elmyra,Krajcik,1-798-125-7932,309 Schmeler Rd West Apt. 265,King County,murazik.henriette@hudson.biz,264-26-3150,1930-05-11,09/25/2024,0.567,0.611,0.56-0.65
+Illya,Schuppe,458-764-8934x002,777 Kitty Mills Apt. 140 Dr Apt. 140,King County,mitzi72@inc.net,200-36-5938,1931-05-09,2024-04-18,0.339,0.376,0.29-0.44
+Lilliana,Block,1-013-146-2007,960 Araminta Ave S,Thurston County,qpollich@inc.info,824-40-5600,1971-04-02,2024-06-27,0.147,0,0.11-0.19
+Wilburn,Rodriguez,1-859-319-5105,446 NorthEast Caddie Boulevard Apt. 274,Ferry County,verlyn.muller@marks.com,174-32-2563,1971-08-29,07/11/2024,0.231,0,0.22-0.25
+Ruel,Schaden,(088)705-3746,663 S Towne Alley,Asotin County,jaunita24@inc.com,125-35-4400,1949-02-27,06/21/2024,1,1,0.99-1
+Josiah,McDermott,722.195.9724x03361,712 Roosevelt Dam Ste,Yakima County,gisselle28@goldner.com,223-23-1071,2000-05-06,08/14/2024,0.136,0.78,0.11-0.16
+Gwen,Cummings,1-832-665-2412,06138 SW Kaydence Market Apt. 368,King County,tai77@hotmail.com,873-19-2726,1980-02-13,2025/02/22,0.014,0.361,0-0.02
+Destini,Metz,1-019-602-3391x75179,958 Macie Street South Apt. 754,Clark County,ekris@yahoo.com,240-47-2051,2018-01-14,2024-12-17,0.741,0.883,0.74-0.75
+Nilda,Davis,1-833-553-5570x88567,694 South Adams Vista,King County,ebernier@and.com,654-52-3593,2005-12-25,06/12/2024,0.298,0.713,0.25-0.35
+Joana,Walsh,679.713.7301x1350,1803 West Connelly Pl,King County ,haag.gabriel@yahoo.com,718-51-3794,1973-08-06,05/24/2024,0.422,0.45,0.37-0.46
+Dewey,Bednar,962.143.1760x19903,1632 SE Anastasia Lane,King County,bridgett.kertzmann@ratke.net,338-76-4517,1959-01-28,2024/12/21,0.801,0.245,0.77-0.82
+Dante,Emard,069-850-3484x70688,831 Ismael Avenue W,Thurston County,squire.sauer@hotmail.com,099-77-4534,2016-07-16,2024/06/09,0,0.001,0-0.04
+Dyllan,Boehm,05598085478,176 West 53th St. Apt. 246,Thurston County,dgoyette@yahoo.com,086-15-8665,2024-03-19,05/30/24,0,0.947,0-0.01
+Angelo,McClure,611-628-9215,744 Rippin Way SouthWest Apt. 328,Spokane County,darmstrong@romaguera.com,417-02-4661,2022-06-01,03/02/24,0.539,0.792,0.53-0.57
+Olga,Kilback,(810)980-1712x576,3567 SE 79th Ave. Apt. 893,King County,alysha24@reinger.net,354-75-1810,1952-04-27,2025-07-04,0.39,0.315,0.35-0.43
+Leonor,Sanford,304-347-0740x90432,682 Denesik Locks Ln,Franklin County,maryann.rath@hotmail.com,177-98-0635,1984-10-27,08/28/2024,0.57,0.536,0.55-0.66
+Sanders,Turcotte,(836)205-7185x10858,57228 Ann Rd North,Skagit County,farrah.monahan@yahoo.com,328-08-5213,2015-08-14,07/09/2025,0.247,0.3,0.24-0.27
+Chancy,Doyle,(361)401-3512,1461  5th Ave.,Walla Walla County,price.emett@hotmail.com,743-43-7180,1990-03-19,10/06/24,0.294,0.329,0.27-0.3
+Federico,Gibson,965.486.4918,9853 Russel Rd Apt. 652,King County,carrol.schroeder@hotmail.com,791-97-5377,1933-02-12,2024/07/04,0.077,,0.04-0.12
+Marcia,Rowe,(242)693-6529x360,7055 NE Lulie Blvd,Benton County,ericka83@mitchell.biz,448-59-8799,1991-02-26,2024-09-27,0.097,0.126,0.09-0.13
+Ara,Boyle,1-789-976-4596x24494,4067 NE McGlynn Alley,Garfield County,deryl73@kuvalis.com,448-06-5554,1954-03-15,2025-03-15,0.317,0.79,0.27-0.33
+Pamala,Gutkowski,1-970-229-1632,102  Lucious Market,Snohomish County,owisoky@runolfsson.com,318-01-7126,1954-11-30,03/10/2025,0.988,1,0.98-1
+Pauline,Braun,272-748-8156x6338,7452 W 25th St,King County,marsha.dickinson@franecki.info,643-52-9471,1973-04-20,01/01/2025,0.139,0.61,0.12-0.16
+Henrietta,Nienow,1-125-773-7957,55940 32th Avenue South,Whatcom County,crooks.andon@lubowitz.com,792-57-8941,2019-04-13,06/18/2025,0.144,0.019,0.14-0.17
+Tarsha,Ullrich,1-217-805-7768,103 SW Howe Avenue,Snohomish County,beahan.jefferey@medhurst.info,304-06-2849,1975-10-11,05/01/2024,1,1,0.98-1
+Mari,Gaylord,157-642-6931x464,62781 Jast Rd,Kitsap County,giuseppe49@wilkinson.com,814-63-9899,1969-05-25,2025/02/05,0.262,0.342,0.21-0.33
+Adrien,Bergstrom,513.501.1089x40080,159 Jast Ln,King County,olson.freddy@gmail.com,376-83-0288,1965-07-18,05/03/2025,0.519,0.336,0.51-0.59
+Iris,Jast,+13(8)3643085542,21811 W Kris Avenue,Douglas County,khari.shields@bode.net,839-78-8676,2001-01-02,2025-04-16,0.356,0.404,0.21-0.42
+Ardath,McCullough,305.291.0114,5567 Reinhold Alley,King County,glennis39@bernier.net,298-18-5810,2009-02-13,2024-04-22,0.529,0.491,0.5-0.6
+Stasia,Bogan,(509)197-8941,089 Hane Skyway Road E,Grays Harbor County,roberta.walter@gmail.com,144-64-4567,2006-11-26,07/18/25,0.981,0.877,0.93-1
+Georgia,Friesen,(761)160-0522,8205 Bins Ave W,Whatcom County,council65@hotmail.com,882-74-1967,1987-12-03,2025/04/19,0.117,0.345,0.1-0.19
+Hardie,Wisoky,374-481-9179x857,55492 W 28th St.,Okanogan County,rene88@yahoo.com,540-45-3443,1941-11-21,2024-05-28,0,0,0-0.03
+Sid,Dare,03792012955,41784 East Tyrone Highway,Whatcom County,gislason.willaim@yahoo.com,564-98-4732,1933-02-16,01/24/2025,0.023,0.01,0.01-0.04
+Franco,Reilly,06137679694,30608 Swaniawski Blvd N,King County,jermain40@llc.org,369-71-7991,1942-04-18,10/18/24,0.313,0.517,0.31-0.33
+Everet,Fadel,(252)348-8382,10126 Stephanie Corner Way,Snohomish County,skreiger@grant.info,045-28-9252,1997-02-14,03/24/2025,0.985,0.999,0.91-1
+Lyric,Barton,1-233-826-8361x466,68093 Toriano Avenue,King County,qwaters@hotmail.com,512-41-4855,1967-07-18,06/22/2025,0.302,0.086,0.28-0.34
+Cathey,Kub,1-868-735-5793x56204,08043 S Durgan Rd Apt. 266,Mason County,haag.holli@gorczany.com,144-64-3611,1987-03-25,09/03/2024,0.715,0.486,0.71-0.74
+Herlinda,Thompson,(253)807-4138,918 Pepper Place E,King County,amy55@yahoo.com,750-95-5494,1983-08-27,10/21/2024,0.258,0.468,0.23-0.32
+Tamiko,Gulgowski,247-042-7319,75554 Kassulke Street Avenue,Benton County,hoppe.felecia@bode.com,293-71-5237,1973-03-04,06/02/2024,0.539,Not Applicable,0.52-0.56
+Andra,Rempel,828-585-2713,4040 Alonso Boulevard SW,King County,suzanna.kemmer@gmail.com,844-30-8575,2003-04-08,2024-09-29,0.292,0.146,0.28-0.33
+Newt,Hansen,559.433.9821x783,38960 East Lottie Row Lane,Yakima County,taja98@gmail.com,619-62-8428,1940-07-17,2025/04/09,0.987,0.99,0.97-0.99
+Alline,Feeney,(904)243-5345,21848 NE Schumm Circles Pl,Whatcom County,shameka96@hotmail.com,583-08-3611,2005-08-17,04/22/24,0.075,0.092,0.05-0.09
+Ted,Breitenberg,798.584.9670,47039 76th Ave West Apt. 451,Whatcom County,rkohler@hotmail.com,455-75-7317,2002-06-17,2024/09/11,0,0.009,0-0.11
+Kaylyn,Graham,+83(1)6198260876,4484 Karol Road NorthEast Apt. 326,Walla Walla County,goldie46@inc.biz,610-62-9052,1969-03-09,12/13/2024,0.314,0.011,0.3-0.33
+Timmie,Hahn,1-335-853-7564x2815,15463 Deb Avenue Apt. 694,Cowlitz County,zmills@yahoo.com,197-51-4103,1952-10-01,2024/11/07,0,0,0-0.05
+Ryleigh,Eichmann,190.641.4227x58449,47693 Prohaska Place,Kitsap County,roxanna71@yahoo.com,207-33-2541,1970-11-21,08/07/2024,0.161,0.366,0.16-0.21
+Dorene,Berge,480-319-1257x9387,128 SE Monroe Ave,King County,asher37@fisher.com,230-85-3378,1958-10-18,2024/08/18,0.807,0.753,0.8-0.9
+Maudie,O'Kon,01432062205,42145 Murazik Way North Apt. 350,Pierce County,broderick.williamson@hotmail.com,751-71-9982,1937-03-09,2024/11/12,1,0.863,0.98-1
+Ewin,Mitchell,715-647-3321x6988,4374 NorthEast Price Lane,Snohomish County,wgoldner@group.info,270-18-0622,2017-05-24,06/07/25,0.989,1,0.93-1
+Flavia,Frami,649-142-3896x971,9411 Rachel Blvd West,Spokane County,romaguera.caiden@hotmail.com,586-11-9646,2021-08-25,06/23/2025,0.665,0.126,0.6-0.68
+Kiara,Cormier,819.737.1115x10560,4858 44th Ave,Pierce County,fheidenreich@yahoo.com,752-43-2164,1982-05-13,2025-07-19,0.987,0.987,0.94-1
+Beau,Hoeger,390-136-1223,11077 O'Keefe Shores Place,King County,bayer.hasel@spinka.com,432-17-7128,1962-05-22,2024/06/20,0.901,0.721,0.86-0.93
+Kane,Olson,1-281-982-1293x9226,849 NorthEast Burl Boulevard Apt. 209,Benton County,may90@homenick.net,360-58-8318,2003-08-29,02/22/2024,0.164,0.43,0.11-0.18
+Davis,Windler,+97(1)7907743985,1292 Williamson Vista,King County,witting.stanton@gmail.com,797-22-4481,1972-03-28,2025-04-23,0.548,0.46,0.53-0.55
+Archie,Gerlach,(146)719-6169x1857,9938 Dorman Ln,King County,jordan99@schumm.com,435-76-1162,1944-05-27,11/05/2024,0.579,0.553,0.53-0.63
+Damian,Haley,(637)453-9083,7711 E Keeling Passage Apt. 396 Highway Apt. 396,Cowlitz County,cassin.vic@nader.com,760-91-7016,1948-05-17,2024-02-14,0.326,0.001,0.32-0.35
+Sumner,Muller,(275)275-3078,2455 NorthEast Sylva Rd,Snohomish County,dan.cole@group.com,300-33-7364,1962-05-19,2025-08-31,1,0.58,0.9-1
+Veta,Swaniawski,1-653-236-4827,1657 SW Brycen St Apt. 571,Pierce County,jettie45@ltd.net,852-69-8817,1962-05-25,2024/11/17,0.707,0.975,0.7-0.82
+Zora,Volkman,+10(5)1976151574,92864 Ona Avenue NE,King County,lynda.mckenzie@marquardt.com,875-81-2273,1996-05-14,12/18/2024,0.301,0.721,0.29-0.32
+Mae,Shanahan,787.105.8588x5113,09533 NE Marion Ln Apt. 997,Pierce County,jordan.zboncak@flatley.com,372-91-6220,2009-01-31,10/28/2024,0.834,0.779,0.8-0.89
+Enola,Langosh,06359433131,0663 SW Third St,Snohomish County,emmerich.colon@hotmail.com,297-26-9351,1951-12-02,09/06/2024,0.478,0.982,0.43-0.48
+Cambria,Anderson,1-089-755-8302x34044,69570 Ethelene Lane NorthWest,Thurston County,uziemann@yahoo.com,842-04-4720,1994-09-07,2024/03/24,0.771,0.003,0.69-0.82
+Joan,Hayes,+96(8)6209757204,81757 Isadora Place,King County,ao'reilly@breitenberg.org,054-89-6536,1945-05-27,01/07/2024,0.352,0.345,0.24-0.41
+Louie,Beier,439.083.8508,38561 NorthEast Terrie Alley,Pierce County,beatty.alzina@gmail.com,340-99-2406,1982-09-09,09/27/2024,1,0.878,0.95-1
+Tressie,Paucek,491-438-3072x22150,1959 Jann Place South,Chelan County,vankunding@yahoo.com,650-86-8854,1980-04-07,2025/01/10,0.209,0.477,0.17-0.25
+Makenzie,Bernier,(572)836-4564x5978,134 NorthWest Bryon Branch Vista,Pierce County,jmckenzie@yahoo.com,365-74-3403,1955-03-26,07/28/2025,0.893,1,0.86-0.92
+Mose,Harris,+97(0)6990873967,87321 Borer Drive SE,Benton County,infant39@gmail.com,130-70-5793,1989-08-02,2024-08-29,0.277,0.143,0.25-0.31
+Isobel,Stoltenberg,681.692.7147x8895,4980 60th Ave Apt. 105,Spokane County,kmclaughlin@hotmail.com,375-82-7607,1954-11-18,2025-06-29,0.224,0.57,0.21-0.25
+Audie,Skiles,156.587.3382,8360 West 78th St.,Pierce County,uarmstrong@hotmail.com,070-85-1237,1944-04-17,08/08/24,0.946,0.978,0.87-0.98
+Urban,Boehm,048-347-2332,0722 NE Ziemann Boulevard,Grant County,moses.larkin@gmail.com,851-11-4624,1973-04-30,01/04/2024,0.656,0.239,0.65-0.77
+Charlton,Swaniawski,357.867.3543x323,0550 Norris Rd Apt. 243,Clark County,lillia.quigley@gmail.com,828-15-1157,2006-01-29,03/13/2025,0.526,0.478,0.51-0.56
+Lainey,Gulgowski,+22(2)6282224012,764  Bogisich Hwy,Pierce County,uwalter@yahoo.com,083-46-0070,1948-03-18,05/02/24,1,1,1-1
+Chase,Tillman,365-549-6523,36178 40th Avenue,Franklin County,cordia.ullrich@inc.org,429-65-9613,1979-06-05,02/10/2024,0.61,0.766,0.58-0.63
+Michal,Howe,+28(0)7978532804,382  Fay Blvd,Benton County,tnader@yahoo.com,464-67-6365,1979-08-26,02/02/2025,0.328,Not Applicable,0.28-0.37
+Deanna,Mueller,01784082320,9522 Eda Mill Vista,King County,cmraz@gmail.com,255-23-4044,2005-01-15,06/21/2025,0.495,0.189,0.49-0.51
+Ferrell,McGlynn,07326839848,900 Leffler Pl SE,San Juan County,sawayn.leontine@renner.com,338-23-8587,2007-11-23,2024-06-26,0.007,0.112,0-0.07
+Gorden,Wolff,905-324-2234,729 W Third St Apt. 772,King County,maebelle.gusikowski@plc.com,723-43-9491,1967-04-03,06/12/2024,0.463,.,0.45-0.52
+Jackeline,Moen,422.518.9599,74030 McCullough Way SE,King County,davis.winfred@hotmail.com,728-58-8065,1988-10-20,02/13/2025,0.22,0.657,0.2-0.27
+Janene,Harris,1-805-879-2069x4982,77594 Luciano Place East,Whitman County,adolph40@group.com,785-53-4950,1960-01-16,06/21/2025,0.762,1,0.71-0.85
+Major,Harris,486-267-7038x8570,834 W Madlyn Dr Apt. 094,Spokane County,michelina.walter@yahoo.com,309-09-4111,2016-08-05,05/13/2024,0.498,0.46,0.43-0.51
+Javier,Rath,(161)105-5926,414 NorthWest Wehner Avenue,King County,omari.prohaska@yahoo.com,601-68-6244,1984-01-13,2024-02-20,0.353,0.464,0.29-0.35
+Dylan,Senger,(189)618-6443,097 SW Kilback Lane,King County,ukub@inc.net,065-47-3793,2015-09-06,08/10/25,0.563,0.838,0.55-0.59
+Anderson,Bashirian,1-564-612-7243,6996 36th St. E Apt. 145,King County,ramsey65@ltd.biz,274-25-7546,2019-09-15,05/01/24,0.392,0.681,0.31-0.41
+Jalynn,Simonis,1-609-857-4707x594,1969 Runte Dr SW,King County,tlubowitz@heathcote.net,660-86-0402,2009-12-12,04/26/2024,0.272,0.502,0.26-0.32
+Shirley,Schimmel,(973)849-5793x4391,813 Vassie Ste,King County,johnson.lawton@plc.info,703-50-4758,1978-10-28,02/24/2024,0.394,0.24,0.39-0.43
+Deforest,Smitham,1-662-369-5317,22557 West 75th Avenue Apt. 231,Spokane County,huels.shatara@hotmail.com,325-41-7594,2018-09-13,2025-02-19,0.377,0.674,0.35-0.47
+Harmon,Walter,529-942-3442,136 Rippin Road SouthWest,Spokane County,dach.emilio@hotmail.com,455-92-7138,1973-09-05,2024/02/15,0.362,0.56,0.3-0.37
+Leonie,Nolan,926-369-3375,324 SouthWest 39th Ave Apt. 571,Grays Harbor County,tprosacco@pfeffer.net,201-83-0532,1991-09-13,08/13/2024,0.45,0.749,0.43-0.47
+Bobbie,Rodriguez,1-733-533-0073x80896,076 Fahey Highway N,King County,schaden.farrell@yahoo.com,506-57-9892,1935-07-24,05/02/2024,0.028,0.304,0-0.05
+Zada,Kub,1-830-344-1970,669 Ryan Blvd NW Apt. 284,Clark County,lkling@plc.info,229-94-3705,1953-07-10,2025-06-17,0.811,0.39,0.78-0.81
+Bobbye,Jenkins,315-408-4246,517 Gutmann Way E,King County,blanda.tisa@wuckert.com,105-54-6433,2008-07-08,02/09/2024,0.519,0.284,0.49-0.55
+Kasey,Douglas,1-004-289-4393,96889 Larson Ln,King County,ebbie90@witting.com,480-60-8841,2012-08-12,2024/02/04,0.308,0.659,0.22-0.33
+Karren,Johns,136.353.0498x465,3906 Wolf Avenue Avenue E,King County,jshields@ruecker.info,576-48-9648,1940-10-21,2024/09/19,0.716,0.673,0.71-0.75
+Clifton,Oberbrunner,1-184-328-7960x60527,816 26th St. NE Apt. 515,King County,ewin.beer@plc.com,354-66-0461,1937-08-14,2024-01-03,0.553,0.699,0.51-0.56
+Sister,Senger,1-673-275-1716x6700,827 Darl Road South,Snohomish County,johnson.avon@kemmer.com,856-89-7112,1976-06-23,2025-01-14,0.999,1,0.98-1
+Jedidiah,Grant,(641)946-9847,612 South D'Amore Drive Apt. 803,Clark County,enrique.rice@rice.com,497-77-0616,1968-11-19,04/10/2025,0.396,0.866,0.39-0.42
+Joelle,Schmeler,(759)748-3834,104 SE Parley Pl,Skagit County,reta.romaguera@hotmail.com,380-21-5629,1946-02-25,04/23/25,0.464,0.809,0.45-0.53
+Carson,Powlowski,(994)928-4194,0200 Gottlieb Place East Apt. 090,King County,feeney.elon@hotmail.com,699-45-2142,2003-07-25,2024-07-04,0.493,0.601,0.48-0.51
+Kael,Durgan,377-996-0811,6740 Lottie Highway N,Snohomish County,zgorczany@gmail.com,614-02-3922,1937-05-01,2024-11-26,0.952,1,0.92-0.96
+Bernardine,Bechtelar,509-404-4748,0486 NorthWest Braelyn Ln,King County,lkovacek@balistreri.com,146-46-4961,1936-08-18,05/09/25,0.697,0.08,0.68-0.75
+Octavius,Kilback,+93(7)1113548787,0192 North 35th Ave.,Pierce County,mwaelchi@rowe.org,216-90-7230,1993-06-04,05/03/25,1,0.97,0.97-1
+Jamya,Jakubowski,816.083.0768x51013,926 S Ratke Station Pl,Spokane County,christel.beatty@gmail.com,093-11-3020,1936-06-15,08/22/2025,0.746,0.301,0.69-0.81
+Sydni,Gaylord,668.465.3594x39439,203 Louis Boulevard SE,Yakima County,bednar.adriane@ltd.com,489-12-9198,1977-08-04,2025-07-01,0.594,0.846,0.59-0.6
+Jed,Runolfsdottir,483-573-0042,42957 Spencer Avenue NW,King County,egusikowski@yahoo.com,020-16-0903,2017-04-29,2025-07-27,0.475,0.539,0.44-0.51
+Braden,Fahey,1-785-389-4406x78826,15178 McLaughlin Hwy North,Okanogan County,adelle69@hotmail.com,456-62-8660,1932-02-09,08/22/2024,0,0.015,0-0.08
+Eulalia,Cole,1-804-013-7371,50732 August Rd NE Apt. 523,King County,burke.runolfsson@gmail.com,591-38-3273,1934-12-25,2025/07/17,0.49,0.695,0.46-0.51
+Ruby,Kuhlman,397-317-9370,12594 NorthWest Sporer Dr,King County,kheidenreich@hotmail.com,477-64-3942,1935-09-11,2025-06-20,0.603,0.269,0.54-0.62
+Azariah,Medhurst,1-503-058-4530x07330,3045 39th St. S,King County,okuneva.kittie@harvey.com,781-35-1322,2002-04-16,03/05/2024,0.226,0.312,0.19-0.25
+Kailee,Blick,+60(9)2720090748,28765 NorthWest Bertha Avenue,Snohomish County,dosha21@considine.info,718-06-6526,2005-06-15,04/10/2025,0.826,1,0.81-0.86
+Herschel,O'Connell,+76(4)3482710734,110 SouthWest Breitenberg Vista,Pierce County,amelia02@yahoo.com,450-59-2659,1999-12-12,2025-06-22,1,0.964,0.96-1
+Abby,Bogisich,(352)082-9971x1901,5188 Greg Blvd NW Apt. 317,Clark County,gunda.wisozk@hotmail.com,309-11-4409,1986-11-24,2025-03-29,0.252,0.683,0.23-0.26
+Lesia,Luettgen,1-116-147-0159x5380,2638 Alwine Way E Apt. 021,Clark County,elvie.blanda@gmail.com,547-47-4684,2003-08-24,2024/09/02,0.568,0.812,0.47-0.6
+Paxton,Casper,05855017052,15159 69th St. SouthWest,Whatcom County,karyn.brown@lindgren.com,815-41-9127,1936-07-07,2024/02/06,0.237,0.064,0.19-0.24
+Martell,Yost,+22(4)5082054328,106 40th Avenue N,Benton County,arizona54@hettinger.info,152-45-4750,1998-03-30,2024/12/17,0.67,0.236,0.58-0.69
+Cornelia,Conn,613.368.8329x7540,3238 SouthWest Camden Drive,Thurston County,lars.streich@lakin.com,824-20-0095,1974-06-29,04/29/2025,0.99,0,0.95-0.99
+Kael,Harvey,872-424-6391,65293  Reilly Boulevard,King  County,dustan67@gmail.com,565-91-7745,1978-01-31,2025-07-10,0.627,0.355,0.62-0.68
+Santina,Johnson,064-459-5809x375,665 48th Street West,Benton County,aharris@hotmail.com,730-40-8230,1960-09-20,2024/05/20,0.353,0.138,0.33-0.36
+Keenen,Rau,00027245561,08197 Kerry Vista E Apt. 546,Clark County,powlowski.otelia@kiehn.info,888-70-8212,1972-10-24,2024-09-29,0.649,0.803,0.64-0.67
+Eric,Kunde,1-528-870-4908x210,6522 Paucek Place W,Benton County,zoie.sauer@yahoo.com,844-42-5299,1983-03-16,2024/02/01,0.178,0.189,0.17-0.25
+Krish,Ullrich,(919)006-6023x526,46719 70th Ave NW Apt. 380,King County,xconnelly@yahoo.com,187-64-8916,1999-02-25,2024-08-14,0.291,0.623,0.27-0.34
+Geoffrey,Jakubowski,1-776-361-7940x7643,59640 Annetta Avenue West,Yakima County,tolson@hotmail.com,365-64-2031,2004-06-17,05/13/25,0.925,0.999,0.87-0.93
+Jajuan,Jacobs,+55(9)1585529625,15168 SouthWest Leannon Alley,Benton County,eschumm@koch.com,883-54-2483,2006-01-07,2024-09-29,0.51,0.586,0.49-0.56
+Wilson,Muller,016.887.6167,50865 Tosha Dr,Thurston County,west.bette@ltd.com,063-92-5349,1993-08-18,2024-08-07,0.447,0.001,0.31-0.5
+Cornelius,McLaughlin,05030997674,,Whatcom County,zela15@llc.com,046-71-1645,1978-02-15,03/06/2024,0.008,0.026,0-0.03
+Jana,Schmitt,155.336.6408x08026,108 South Beier Ste Apt. 466,Skagit County,imoore@hotmail.com,067-57-9176,1943-08-04,03/03/2024,0.861,0.103,0.83-0.89
+Catina,Rutherford,07238636600,32147 NorthWest Dovie St,Spokane County,rrutherford@inc.com,652-90-7043,2005-09-06,2024-05-03,0.59,0.63,0.55-0.66
+Nash,Langworth,05665162953,867 North Jean Dr,Benton County,griselda54@yahoo.com,181-60-9324,1989-11-16,02/14/2025,0.433,0.113,0.42-0.49
+Kaelynn,Lemke,(273)138-1254x96382,660 Lowe Pl NorthEast,Thurston County,upton.prentice@hotmail.com,588-96-2954,1980-06-21,12/29/2024,0.086,0.013,0.08-0.12
+Mariann,Crona,1-652-255-4621,628 NE Third Ave Apt. 608,Thurston County,linn23@gmail.com,644-59-0649,1938-01-19,06/17/2025,0.282,0.007,0.26-0.29
+Monte,Murray,687-099-4557,3976 SW 9th Ave.,Pierce County,ischamberger@gmail.com,748-73-0873,1951-12-14,05/15/2024,1,1,0.96-1
+Royal,O'Keefe,717.537.2831,095 Third St.,Thurston County,rosia.reichel@yahoo.com,046-06-4858,1968-05-22,07/16/2025,0.032,0.052,0.03-0.08
+Ilona,Wyman,+99(1)8291842397,929 NorthWest 9th Ave.,King County,hkirlin@towne.com,007-16-7916,2021-12-19,2024-11-28,0.343,0.462,0.29-0.35
+Vicy,Schiller,(883)848-0093x1486,address,Chelan County,georgie71@hotmail.com,262-40-4990,1972-11-24,05/21/24,0.678,0.451,0.65-0.69
+Wash,Sanford,1-026-251-0657,00621 Melisa Extension Apt. 372 Ln Apt. 372,King County,unolan@yahoo.com,674-64-7284,1936-12-31,07/06/2025,0.357,0.491,0.35-0.36
+Beverley,Klocko,(572)983-3865x85710,667 Ewald Alley NW,Clark County,turner.lugenia@yahoo.com,262-41-1766,2008-10-03,2024/08/07,0.469,0.683,0.47-0.55
+Rubye,Kuphal,+82(4)9909959887,42595 Donnelly Drive West Apt. 191,Franklin County,deloris63@becker.biz,668-23-8888,1971-12-30,01/20/2025,0.592,0.846,0.53-0.63
+Finis,Stokes,1-565-194-5892,7708 22th St.,Yakima County,nkunde@hotmail.com,562-77-5452,1958-12-27,2024/10/04,0.515,1,0.49-0.55
+Jammie,Ryan,1-671-189-9424x94179,583 2nd St E,King County ,magdalene67@orn.biz,576-01-8294,1955-12-29,2024/12/07,0.51,0.46,0.5-0.55
+Amir,Schuppe,799.200.1138,415 Katharina Avenue SW Apt. 607,Snohomish County,armida.stiedemann@yahoo.com,473-68-3506,1957-05-22,2025/01/29,1,1,0.99-1
+Melvina,Powlowski,(639)695-9118x921,11478 Bartell Ave S,King County,wilderman.brenton@funk.org,800-35-2172,1992-01-24,05/29/2025,0.85,0.418,0.83-0.9
+Tallie,Stracke,416-315-2505x155,776 NorthEast Veum Neck Dr,PierceCounty,braelyn.champlin@carroll.com,318-17-5487,1951-01-29,09/29/2024,0.991,0.992,0.97-1
+Khadijah,Blick,188.347.1664,75399 Klein Hwy South Apt. 017,Franklin County,mwilliamson@hotmail.com,417-98-6246,1933-02-05,2024/08/19,0.315,0.73,0.27-0.39
+Dell,Murray,(643)591-9762,12653 O'Hara Ste SE,Clark County,willow.ankunding@altenwerth.org,377-65-2492,1985-12-29,03/10/24,0.922,0.863,0.9-0.93
+Early,Aufderhar,421-974-9132x04609,166  Debi Vista,Yakima County,barnett.gerlach@and.net,491-49-5729,1937-12-24,2024/02/24,0.782,0.962,0.72-0.79
+Delma,Ledner,357.462.4284,517 NorthWest Mills Pl,King County,alida.hammes@gmail.com,352-89-8440,1967-04-03,2024/10/22,0.426,0.214,0.37-0.49
+Jude,Hilll,(479)104-0104x56749,2821 Jedediah Drive,King County,dare.pat@blick.org,665-71-6115,1930-01-18,06/07/2025,0.668,0.434,0.65-0.71
+Sharlene,Franecki,288-910-8300,923 Lilia Lane Apt. 305,King County,murazik.pallie@west.com,604-11-5702,1949-11-07,05/01/2024,0.084,,0.05-0.1
+Jerrad,Halvorson,1-446-487-4793x011,39683 75th Street,Snohomish County,abradtke@hotmail.com,028-53-3084,1959-12-08,2024-10-21,1,1,0.99-1
+Nery,Graham,1-667-325-0316x593,5482 Erin Dr NE,King County,omante@renner.net,595-47-5972,2014-12-10,08/11/2024,0.346,0.223,0.34-0.37
+Manson,Hagenes,01378543337,45805 Velvet Vista,Pierce County,jaslyn.kirlin@gmail.com,050-33-8074,1990-04-05,2024-10-08,0.752,0.976,0.67-0.76
+Demetrios,Kilback,803-450-1521,64564 56th Ave SouthWest Apt. 060,Snohomish County,gkovacek@gmail.com,066-32-3954,1962-06-12,2024-04-30,1,1,1-1
+Dara,Predovic,675-252-8191x507,4181 59th Ave. NorthEast,Lincoln County,victoriano91@lubowitz.net,482-65-0648,2023-06-23,2024/02/26,0.457,0.585,0.4-0.49
+Billie,Goyette,(653)708-4918,9795 71th Street Apt. 645,Chelan County,jaycie.glover@wolff.com,036-03-8012,1992-06-12,2025-08-15,0.844,0.164,0.82-0.88
+Idabelle,Gusikowski,(939)426-7662,9248 NW 69th Avenue Apt. 278,King County,yhowe@leffler.com,136-29-4535,2010-03-05,2025-03-11,0.306,0.858,0.28-0.35
+Chris,Klein,1-066-814-6640x63567,06539 Torphy Way,Snohomish County,uschiller@group.biz,295-54-1680,2009-11-06,06/27/2025,0.999,1,0.97-1
+Rianna,Homenick,+82(2)1613878380,3655 SouthWest 58th Avenue,Grant County,stremblay@yahoo.com,836-34-4726,1965-05-02,07/01/2024,0.264,0.205,0.19-0.3
+Willodean,Goyette,1-144-141-4559,6179 NW Schuster Ln,Pierce County,lafe47@hotmail.com,387-59-1843,1963-07-21,2024-12-05,0.939,1,0.93-0.97
+Destiny,DuBuque,000.745.4824x651,3021 Farah Dr SouthEast,Kitsap County,bartell.corrina@gmail.com,848-47-8744,1954-04-09,02/11/2025,0.062,0.188,0.04-0.14
+Lynsey,Kautzer,1-400-885-0388,52986 NW Labadie Blvd Apt. 580,King County,reichel.shelba@gerhold.com,720-36-1545,1990-11-01,03/23/2025,0.705,0.302,0.68-0.72
+Tamala,Jaskolski,283.772.5751,208 SW Shane Market,Yakima County,jacobson.amin@hotmail.com,794-52-7817,1939-10-09,04/26/2025,0.806,1,0.79-0.85
+Kiarra,Turcotte,(602)631-4875x27583,03917 Bogan Falls Drive East,King County,weissnat.ara@yahoo.com,674-38-5854,1951-08-12,2024-06-05,0.097,0.331,0.09-0.1
+Rosey,Anderson,(655)670-8755x422,831 NorthWest White Ln Apt. 285,King County,samual00@gmail.com,851-44-2331,1971-12-08,2024-10-10,0.488,0.361,0.4-0.52
+Ciji,Herzog,(673)972-7462x75861,67804 Gleason Boulevard Apt. 205,Clark County,oberbrunner.harry@boyle.org,484-18-6688,1961-04-07,11/14/24,0.43,0.82,0.42-0.46
+Lyman,Prohaska,(078)947-9265,87425 West Branch Ste,King County,sklein@yahoo.com,198-18-3003,1960-12-12,2024/01/27,0.664,0.32,0.64-0.67
+Captain,Stoltenberg,1-249-868-5757,75781 Keshawn Market,Pierce County,fd'amore@hotmail.com,341-91-4320,1940-02-29,2025-02-01,0.998,1,0.96-1
+Gaines,Johnson,1-086-651-4891,09355 E Parker Lane Apt. 565,Kitsap County,rbarton@morissette.com,561-93-4902,2000-03-10,2024-10-12,0.035,0.039,0-0.05
+Adrain,Gerlach,256.356.6552,60093 NW Vander Ln,King County,hammes.little@collins.com,662-44-3989,1955-10-30,2025-03-03,0.467,0.445,0.46-0.58
+Alanna,Harris,1-052-071-6483,1836 SouthWest Rosenbaum Causeway Apt. 497 Road Apt. 497,Cowlitz County,cremin.siobhan@and.biz,693-84-7696,1997-03-24,2025/01/18,0.883,0.239,0.85-0.9
+Caleb,Schaefer,755.288.9693x7749,149 Smith Avenue,King County,vela.romaguera@gmail.com,691-66-9292,1995-10-05,02/07/2025,0.261,0.348,0.21-0.3
+Stevie,Jacobs,370-764-5739,847 E Lisette Dr,Jefferson County,kathie91@hotmail.com,523-08-8490,1998-02-25,01/22/24,0.703,0.751,0.68-0.71
+Antwain,Waters,789-476-0090x0513,4642 NW West Dr Apt. 841,Pierce County,wiza.cloe@ltd.com,439-64-6924,2000-12-10,2025-06-02,1,1,0.99-1
+Nichol,Welch,380.634.6208,748 Gee Place SW,King County,nolan.gaither@nikolaus.com,721-76-6193,2007-10-11,2025/07/08,0.517,0.537,0.49-0.59
+Trayvon,Klein,355.683.5250,1808 Ronnie Drive SouthEast Apt. 155,Grant County,isabela98@hotmail.com,366-69-9714,1947-09-06,2024-08-03,0.211,0.376,0.13-0.24
+Kristen,Hegmann,433-462-6177,324 23th St N,Pend Oreille County,caltenwerth@gmail.com,290-91-0604,1996-11-18,08/14/2025,1,1,1-1
+Casey,Mertz,(548)790-3840,680 Gaylord Ste North,Pierce County,kaaren.paucek@yahoo.com,835-78-1027,1942-06-29,2024-08-02,1,1,0.95-1
+Ayden,Wisoky,03693458749,3979 South Calvin Place,Benton County,antwan52@group.com,451-28-5334,1970-07-09,09/25/2024,0.343,0.314,0.32-0.41
+Roland,Jacobi,971-474-0136x206,2581 NorthEast White Road,Snohomish County,dickinson.florance@yahoo.com,667-77-3080,1966-03-17,05/19/2024,0.255,1,0.22-0.32
+Merritt,Osinski,1-239-053-4508x510,0336 Alanzo Boulevard NorthEast,King County,erdman.deborah@yahoo.com,050-08-3424,1960-06-03,2024/12/20,0.597,0.711,0.59-0.63
+Finley,Champlin,(569)393-2399x198,498 58th St.,Pierce County,barton66@keebler.org,087-58-9491,1972-10-07,2025/04/24,0.833,1,0.77-0.88
+Garnett,Cremin,+79(2)4297615504,48895 Reanna Rd North,King County,theathcote@plc.net,142-22-3671,1955-08-14,2024-03-24,0.364,0.302,0.33-0.37
+Rhett,Dare,601-585-1079,90874 Zulauf Cove Apt. 837 Ste N Apt. 837,Pierce County,bernhard.verena@heidenreich.info,236-70-2585,1931-04-26,08/29/2025,0.999,1,0.97-1
+Gilberto,Torphy,622.117.5216x0588,68319 Hilll Drive Apt. 375,King County,josephus05@gmail.com,478-21-0076,1939-07-08,10/19/2024,0.122,0.183,0.05-0.12
+Alver,Dietrich,1-884-178-6304,7094 N Hane Blvd,Yakima County,jaxon74@monahan.com,377-83-8840,1983-10-28,2024-01-27,0.829,0.838,0.81-0.84
+Alphonse,Hartmann,534.901.0147x80751,553 Zemlak Way,Walla Walla County,wolf.roxann@harris.com,315-90-7561,1935-11-20,2025/05/14,0.071,0.007,0.05-0.12
+Velda,Douglas,(492)738-1359x2470,90703 22th Ave,Clallam County,bill87@inc.com,588-47-0194,1977-12-01,07/29/2025,0.058,0.246,0.02-0.09
+Horace,Marks,675.484.4865x03709,03423 Wally Rd North,King County,klein.kandace@hotmail.com,448-39-5491,2015-11-25,08/19/24,0.943,0.478,0.92-0.97
+Jacklyn,Swaniawski,348.802.3803,4694 Authur Lakes Place West,Snohomish County,leffler.adrianne@hotmail.com,566-98-4399,2006-11-14,2025-03-12,0.155,1,0.15-0.19
+Georgie,Streich,255-447-4216,4675 50th Street North,Whatcom County,vcorkery@hotmail.com,004-42-6464,1995-07-31,2024-05-25,0.001,0.644,0-0.01
+Jessee,Kihn,1-850-550-2296,72156 NorthWest 17th Avenue,Pierce County,mackenzie.mohr@cole.com,452-12-8667,1941-03-03,2024-04-28,1,1,0.99-1
+Shanika,Brakus,009.848.1433x996,86029 Liliana Blvd NE,Yakima County,king.derwin@pacocha.info,123-84-7112,2002-12-18,2024/01/12,0.842,0.903,0.84-0.87
+Captain,Rogahn,(791)751-2497,3288 SouthWest Kulas Alley,Yakima County,stetson34@yahoo.com,028-84-3863,1983-10-26,2024-03-11,0.909,0.55,0.9-0.96
+Irine,Abernathy,1-752-548-6394x610,990 Bettyjane Boulevard NorthEast Apt. 546,King County,almina49@robel.com,700-57-3806,1979-10-08,2025/04/30,0.64,0.12,0.62-0.7
+Connor,Blanda,930.575.9149,0066 51th Avenue North Apt. 960,Spokane County,lind.alfonse@hotmail.com,026-42-8215,1960-07-20,06/12/2024,0.611,0.229,0.59-0.63
+Ahmed,Windler,400-375-1801,student,King County,asawayn@hotmail.com,527-76-5216,2024-05-21,2024/12/25,0.246,0.81,0.21-0.26
+Collie,Abbott,606-392-6011,79362 17th Avenue SouthWest,King County,bhermann@yahoo.com,778-37-1553,1958-01-29,2024/05/12,0.469,0.263,0.45-0.59
+Kathyrn,Treutel,(025)754-4207x3483,672 21th Ave. Apt. 169,Snohomish County,vgreenfelder@hotmail.com,015-06-4286,2007-10-17,2024-01-02,0.859,0.169,0.83-0.93
+Odin,Brown,1-706-814-3292x68690,20763 West 59th St Apt. 904,King County,zjacobson@hotmail.com,824-61-7702,2016-07-22,03/09/2025,0.805,0.341,0.8-0.83
+Britney,Roob,813-084-4894x255,2845 Lynch Hwy SE,Snohomish County,brinley66@yahoo.com,471-81-5313,1969-09-22,03/26/2025,1,1,0.99-1
+Heriberto,Deckow,(634)714-3312,7691 Heaney Ln,King County,rgrimes@yahoo.com,181-38-5313,1998-11-14,12/09/2024,0.344,0.026,0.28-0.39
+Brooklyn,Schmeler,284-615-2733x611,172 SouthEast 61th St,Island County,deborrah62@murray.com,695-66-1787,1935-06-01,08/01/2025,0.088,0.144,0.07-0.1
+Roxanne,Walker,987-690-5553,8629 Jones Vista NE,Pierce County,luda.moore@greenfelder.net,732-64-7124,1994-12-19,03/14/2024,0.993,NA,0.94-1
+Jayleen,Klocko,222.714.1282x6983,92127 12th St West Apt. 195,Spokane County,qbayer@yahoo.com,543-25-9269,1947-07-18,08/02/25,0.671,0.459,0.63-0.69
+Kyara,Lang,875.020.6324x9986,5310 Christion Blvd Apt. 115,Pierce County,rianna44@hotmail.com,676-07-0993,1983-07-26,06/01/2024,1,1,0.98-1
+Lonnie,Toy,763.465.6633x1633,0200 58th Street SouthEast,Franklin County,czemlak@plc.com,645-46-8468,1981-03-30,07/19/2024,0.606,0.852,0.56-0.67
+Jabbar,Muller,01831889066,125 NE Mindi Ln Apt. 964,King County,oturcotte@satterfield.info,305-49-5744,1951-03-29,02/07/2024,0.229,N/A,0.16-0.24
+Bella,Reichert,476-161-8480x6546,6643 Pandora Dr SW,King County,gbins@haley.com,871-99-3934,1984-01-06,2025-06-21,0.641,0.586,0.58-0.67
+Carlisle,Johns,(403)864-4566x53673,173 Goldia Hwy NE,Clark County,trula.crooks@yahoo.com,895-95-1740,1949-04-14,2024-07-19,0.717,0.432,0.71-0.75
+Frederica,Stehr,(358)192-6475,6869 23th Ave. SouthEast,Columbia County,tlarkin@hotmail.com,636-18-3203,1997-05-28,2025-05-01,0.865,1,0.79-0.9
+Sharen,Koch,883-360-4184x66043,70737 SouthWest Vilma Avenue,Skagit County,delano.dicki@hoppe.info,395-32-8353,1957-05-14,2025-05-14,0.333,0.198,0.25-0.34
+Cielo,Kuvalis,620.803.8343,694 NorthWest 61th Ave.,King County,bhoppe@gmail.com,847-67-0611,1966-10-03,2024-05-13,0.106,0.084,0.1-0.12
+Alwilda,Feeney,321.510.3662x0269,72177 West Patric Market,King County,scarroll@beer.com,485-28-6259,1984-11-14,04/10/25,0.003,0.46,0-0.09
+Gideon,Hand,04107218100,9293 W Beahan Blvd Apt. 415,Pierce County,johnnie36@plc.com,502-82-6199,2015-07-13,03/29/2025,0.983,0.853,0.94-1
+Tawana,Berge,(628)100-5402,86449 SW 22th Avenue,King County,sandra.reinger@hotmail.com,446-02-8571,1960-09-15,07/14/24,0.077,0.224,0.05-0.08
+Maryam,Zulauf,402.433.7312x619,6325 Hartmann Vista,Spokane County,tyshawn47@mayer.net,356-09-6081,1952-09-23,2024/09/29,0.446,0.782,0.38-0.47
+Don,Morar,(873)931-9167,95469 NorthEast 21th Avenue,Thurston County,fhermiston@hotmail.com,777-60-6600,2007-02-28,03/14/2024,0,0.001,0-0.04
+Casandra,Erdman,(496)158-3972,0603 East 18th Ave,Pierce County,fritsch.aryan@hotmail.com,889-06-1309,2007-09-21,11/29/2024,0.986,0.926,0.96-1
+Iva,Cruickshank,1-094-424-6010,126 Staci Place,King County,ottis.hand@yahoo.com,599-39-8213,1937-02-24,03/07/2025,0.605,0.394,0.54-0.63
+Frances,Brekke,(922)912-3158,83087 NE Heathcote Way Apt. 151,Lincoln County,akohler@llc.com,821-32-3893,1951-08-14,2024-11-18,0.016,0.148,0-0.07
+Gaige,Tillman,1-209-879-6807x316,21650 Vaughn Squares Apt. 901 Lane NE Apt. 901,Kitsap County,nlindgren@gmail.com,016-50-8002,2013-12-06,2024-07-18,0.172,0.498,0.14-0.2
+Zayden,Nikolaus,713-817-6829,388 W Welch Island Apt. 390 Drive Apt. 390,Kitsap County,yluettgen@hotmail.com,465-51-2939,1946-08-05,11/04/2024,0.004,0.635,0-0.02
+Rae,Rolfson,1-077-328-7140x7234,979 Roxy Crescent Way,King County,kecia27@yahoo.com,300-43-6916,2000-10-14,01/02/2024,0.835,NA,0.78-0.87
+Gladis,Botsford,1-485-445-2997x275,075  Ann Pl,King County,anais45@howell.com,314-67-8954,1930-10-20,2024-05-22,0.538,0.586,0.53-0.62
+Chris,Kling,1-702-334-5137x1230,90833 Barrows Drive SE,Spokane County,unienow@stokes.com,887-68-9802,2011-12-05,04/02/2024,0.334,0.764,0.31-0.39
+Caren,Cummerata,102.258.5123x8351,538 Kuphal St Apt. 832,Klickitat County,chyna.hartmann@gmail.com,727-71-4406,1941-12-13,05/17/2024,0.677,0.467,0.67-0.77
+Jamie,Carter,1-143-867-8915,4870 Tyrek Rd SW,Clallam County,darius.vonrueden@hotmail.com,885-45-5101,1946-08-08,2024/08/04,0.17,0.223,0.11-0.17
+Le,Stroman,(975)562-6318,318 39th Ave.,Spokane County,eloy.carroll@inc.com,509-38-4516,2003-02-06,05/19/2024,0.232,0.38,0.19-0.25
+Jaren,Gorczany,072-050-1854x6344,46134 E Otto Dr,King County,ahodkiewicz@yahoo.com,100-06-3677,1984-10-08,2025/06/10,0.159,0.238,0.14-0.17
+Nelia,Greenfelder,00882048556,0009 Welch Village St E,Snohomish County,lilyan.pagac@group.com,543-21-4811,1954-12-08,2025/03/08,1,1,0.99-1
+Bedford,Mante,966-516-8537x417,34995 Hayes Way Apt. 899,Snohomish County,commodore88@hotmail.com,622-91-1974,1965-05-26,01/20/2025,0.966,1,0.95-1
+Salome,Sawayn,+12(9)4342195300,8918 Maybell Alley Apt. 883,Benton County,trista08@hotmail.com,533-81-4615,1972-03-01,2024-01-06,0.456,0.557,0.45-0.46
+Erving,Considine,01083100360,0132 East Shantel Alley Apt. 641,Pierce County,vashti.auer@hotmail.com,130-41-5941,2012-09-24,2024-11-05,1,1,1-1
+Mell,Kirlin,04695620064,6358 Stokes Villages Ave NW,Chelan County,cgottlieb@dickens.info,653-87-9468,1935-06-11,2024-03-13,0.82,0.158,0.82-0.86
+Willodean,Kessler,729.848.5699,1490 Waldemar Lights Place NorthWest,Pierce County,erasmus17@kirlin.org,496-44-7180,1952-11-15,09/13/2024,1,1,0.96-1
+Silas,Wunsch,+79(7)9201918452,848 West Jacobs Park Apt. 937 Dr Apt. 937,Stevens County,arletta23@hotmail.com,211-40-2855,2009-06-21,07/11/2024,1,1,0.97-1
+Kaleigh,Greenfelder,1-182-778-5283,4623 NW 45th Ave.,Spokane County,jim.schowalter@hotmail.com,196-64-4892,1990-11-24,2024-02-29,0.128,0.671,0.08-0.16
+Stevan,Baumbach,+63(9)7366175843,1772 68th St,King County,verner20@yahoo.com,027-48-5391,2010-11-08,2025/08/10,0.475,0.149,0.47-0.49
+Jeremy,Morar,(843)897-5031x261,83678 N Britta St,Pierce County,dicki.dennie@jast.net,605-42-0390,2009-07-02,2024-01-24,1,0.131,0.99-1
+Katie,Hettinger,07859073395,61787 SouthEast Benedict Alley Apt. 002,Clark County,purdy.margurite@pacocha.com,342-40-4843,2000-10-29,06/09/2024,0.566,0.468,0.5-0.61
+Marilou,Feest,526-087-2353x2403,061 E 46th St.,King County,ostanton@yahoo.com,634-81-2780,1985-01-07,2024-01-24,0.214,0.265,0.2-0.22
+Marsh,VonRueden,+32(8)2219222729,020 Kit Highway Apt. 787,Thurston County,becker.jackeline@gmail.com,687-53-2294,1962-09-14,09/21/2024,0.028,0.128,0-0.05
+Kenyatta,Orn,+49(6)2792911531,56409 SW Kertzmann Ave,Benton County,doyle.carole@sporer.com,042-63-3444,1993-11-05,2024-01-01,0.091,0.093,0.07-0.13
+Caitlynn,Jones,716.808.1877x63488,5869 Marchello Ste North Apt. 447,LewisCounty,hmann@yahoo.com,462-47-9061,2015-01-18,06/19/24,0.521,0.782,0.48-0.61
+Ezell,Stokes,413-901-3983x794,743 SouthWest Konopelski Vista,Snohomish County,kihn.orval@plc.biz,382-32-4463,1961-11-23,2024-03-15,0.986,1,0.96-1
+Leonora,Labadie,511-463-8719x553,705 Stracke Highway NorthWest,King County,dora.bednar@hotmail.com,632-81-1330,1931-04-14,2025-03-11,0.796,0.519,0.74-0.82
+Hardin,Hilpert,+14(3)0086468962,439 N 58th Street Apt. 185,Snohomish County,vicie17@gmail.com,195-96-2376,1966-04-01,11/25/2024,0.999,1,0.98-1
+Ciarra,Homenick,661.492.2521,668 Toby Ferry Way,Grant County,kahlil.lueilwitz@group.com,714-32-5533,1972-09-28,03/30/2025,0.203,0.106,0.18-0.23
+Jabbar,Weimann,996-921-4382,283 Gislason Blvd,King County,kuphal.betsy@dooley.org,656-10-0411,1968-12-12,2024/03/30,0.431,0.198,0.42-0.43
+Fremont,Tremblay,1-192-985-3377x8360,8433 Carnell Fork Apt. 782 Boulevard S Apt. 782,Cowlitz County,kessler.linn@hotmail.com,445-26-9433,1940-12-29,2025/04/14,0.002,0,0-0.04
+Zigmund,Sanford,(148)397-4214,109 Elie Boulevard East,King County,jvandervort@yahoo.com,891-55-7999,2008-01-03,10/12/2024,0.161,0.306,0.09-0.2
+Dion,Zemlak,1-572-478-0984x2906,2973 NW Rosario Valley Apt. 730 Dr Apt. 730,King County,alyssia.schulist@hotmail.com,068-07-8148,1983-07-16,04/18/25,0.245,0.632,0.17-0.3
+Edsel,Kiehn,+85(6)3709408606,46019 Arvel Ln SE,Wahkiakum County,xwilkinson@hotmail.com,094-92-1635,1972-09-12,10/03/2024,0,0.009,0-0
+Elwood,Walker,1-275-295-0546x019,105 Florrie Market NE,Spokane County,jquigley@hotmail.com,214-66-5291,1951-09-09,06/07/2025,0.709,0.239,0.7-0.73
+Jerimy,Steuber,(537)537-6856x2269,230 70th Ave. S,Kitsap County,halie41@rosenbaum.com,836-25-2736,1956-05-16,02/12/25,0.576,0.755,0.55-0.58
+Ayanna,Labadie,703-699-3462x440,70737 NW Mertz Ln,Snohomish County,brendan.toy@brakus.org,702-33-0150,1959-05-28,2024-12-08,0.718,1,0.71-0.76
+Olar,Moen,1-948-156-1439x684,994 Barton Avenue,Pierce County,kunde.ozell@gmail.com,678-46-1885,2013-08-22,02/02/2025,0.952,0.981,0.94-0.97
+Montie,Hagenes,+70(9)2878665844,7948 NorthEast Lynch Street,King County,dwight.bashirian@inc.com,387-33-8947,1938-10-08,02/21/2025,0.472,0.072,0.43-0.51
+Manie,Shanahan,+54(7)6350408623,111 Ryan Way NorthWest,Yakima County,mills.zena@gmail.com,580-77-9500,1934-04-14,07/01/2024,1,0.368,0.92-1
+Boone,Hermiston,(953)390-8244x607,95276 North 19th St.,Skagit County,xhaley@spinka.info,456-40-5809,1973-03-23,03/11/25,0.085,0.305,0.03-0.1
+Jerrica,Heathcote,04225598040,03785 Brittney Canyon Apt. 115 Lane NE Apt. 115,King County,hagenes.jerel@gmail.com,792-10-6222,2010-05-25,07/24/2024,0.132,0.215,0.09-0.16
+Burnie,Spinka,05900411856,626 W Torrance Place,Mason County,shea91@toy.info,010-85-9155,1936-02-08,2024-02-23,0.987,0.945,0.97-1
+Gracelyn,Hills,335.982.8746,12364 Schiller Alley,King County,deasia.dare@zemlak.com,156-39-4858,1969-07-14,06/11/2024,0.602,0.231,0.57-0.65
+Tarah,Gleichner,386-773-8019,address,Thurston County,pablo.bartell@llc.com,173-66-1529,1975-11-14,04/19/2024,0,0,0-0.12
+Frankie,King,02911051216,8507 Aubrey Street W,King County,herzog.kennth@larson.com,298-15-3607,1955-02-06,2025-08-03,0.299,0.229,0.24-0.38
+Ethyle,Boyle,636-140-2309,6173 Argie Hwy E,Grays Harbor County,kristina.gusikowski@plc.com,575-19-6981,1958-02-25,11/10/24,0.994,0.806,0.96-1
+Acey,VonRueden,00809824349,2286 35th Avenue North,Grant County,paucek.marlene@gmail.com,682-26-7167,1977-10-26,10/01/2024,0.274,0.803,0.22-0.34
+Leonore,Muller,059-170-9631x454,3099 Auston Lane,Island County,gheathcote@hotmail.com,430-24-0729,1994-10-23,2024/05/24,0.786,0.661,0.77-0.81
+Hilliard,Okuneva,914-423-0935,8816 Jaylan Ln North,Snohomish County,flatley.ferne@yahoo.com,422-97-7338,1953-02-03,2024/09/03,0.999,0.807,0.99-1
+Clemence,Russel,980.221.7608x807,181  Deegan Boulevard,Island County,russel.rollie@hotmail.com,323-59-1013,2018-11-21,2024/03/29,0.327,0.88,0.25-0.35
+Marci,D'Amore,(486)775-3372x815,,Ferry County,stanton.carole@d'amore.org,224-73-5013,2001-05-20,2024/10/12,0.525,0.34,0.51-0.55
+Alfie,Flatley,04426087203,1753 South Larson Road,Clark County,grady.corbett@weissnat.com,408-77-7522,1966-11-21,2024-04-22,0.894,0.486,0.86-0.9
+Windy,Rosenbaum,884-265-5243x5370,0792 13th Avenue NorthWest,King County,shaneka54@funk.com,316-34-0813,1987-07-19,06/01/25,0.109,0.426,0.01-0.14
+Reynolds,O'Kon,+88(1)9686409984,440 Legros Dr North,Clark County,wbuckridge@yahoo.com,687-39-9094,1981-10-29,2025-04-22,0.706,0.73,0.67-0.81
+Lamar,Fisher,1-856-032-6267,989 Harris Drive SouthWest,King County ,vemmerich@erdman.com,229-35-4632,1966-06-03,2024-04-30,0.254,0.483,0.22-0.28
+Dean,Rowe,+93(5)4759367641,845 Prohaska Highway S Apt. 680,Kitsap County,hessel.cato@hotmail.com,805-25-2376,1979-02-24,2025-07-10,0.067,0.489,0.05-0.12
+Anna,Rutherford,740-910-9531,536 Sherri Ramp Drive SouthWest,Snohomish County,zackary.pollich@and.com,432-95-3881,1959-10-31,02/07/2025,1,1,0.99-1
+Missie,Ryan,(415)334-6258x872,2547 Nellie Ste,Snohomish County,sauer.karlene@reilly.biz,001-51-6177,1979-01-11,02/21/2024,0.998,1,0.99-1
+Tyra,Rohan,1-329-599-7940x652,089 78th St,King County,trilby57@group.org,389-43-1009,2002-06-22,2025/07/03,0.63,0.17,0.57-0.73
+Rashaan,Lemke,1-584-488-0853x6455,4645  Borer Road Apt. 952,Yakima County,marleen.toy@davis.org,132-96-7549,1932-04-25,2024-07-24,0.981,0.7,0.96-1
+Jade,Gleason,1-366-454-9112x47933,92882 Alford Cape Street SouthEast,Thurston County,twyla79@rice.com,474-32-8417,1967-12-19,10/21/2024,0,N/A,0-0.03
+Kenneth,Feeney,294-387-4664x353,8267 SouthWest Beatty Market Apt. 521,Snohomish County,thompson.lovina@schuster.com,810-50-8610,1997-06-21,04/04/2024,1,1,0.96-1
+Tonya,Ward,879.171.8182x523,758 SE 53th Ave,King County,lubowitz.zada@yahoo.com,821-19-7703,1952-02-15,10/15/24,0.116,0.047,0.1-0.14
+Elmira,Mitchell,966-781-7405,35627 SW Tyrique Avenue,Snohomish County,jacobs.marjorie@terry.net,163-89-4221,2006-03-20,2024-08-12,1,0.539,0.98-1
+Cathi,Kiehn,+59(9)6597406337,4514 Zulauf Ste SouthEast,Thurston County,sheree76@plc.com,751-22-7072,1967-07-10,2024-03-17,0.053,0.18,0.04-0.08
+Teddy,O'Hara,926.903.9510,94799 30th St. E,Stevens County,vanessa.gutkowski@lehner.info,782-12-6871,1990-09-04,04/26/2025,0.798,0.455,0.75-0.86
+Heather,Bernier,1-523-995-4844x599,2891 Murray Road NW,Wahkiakum County,oneal.eichmann@hotmail.com,420-28-0921,2018-09-29,06/17/2024,0.274,0.345,0.25-0.29
+Berry,Stracke,04780354627,0025 Davis St,Skagit County,swaniawski.katharine@group.com,200-26-9776,1962-05-26,2024-03-27,0.125,0.59,0.11-0.15
+Liston,Abshire,289-357-9084x1029,713 Grisel Garden Street,Snohomish County,zosinski@yahoo.com,406-97-3506,1935-12-11,02/17/2025,0.998,1,0.94-1
+Aubrey,Langosh,1-359-339-6034x90645,4344 W Herman Drive Apt. 784,King County,buck01@klocko.com,119-08-2189,2006-02-09,10/05/2024,0.451,0.104,0.37-0.46
+Laken,Batz,873.054.1132x194,603 SouthEast Watt St,Thurston County,kael66@ondricka.net,715-43-1172,1979-05-10,2024-12-13,0,0.001,0-0.05
+Raymond,Hilpert,1-968-832-9783,28187 Miles Boulevard  Apt. 157,Asotin County,cruickshank.irvine@yahoo.com,880-59-0226,2012-09-27,2025-04-07,0.773,0.572,0.72-0.78
+Dannie,Walsh,466.239.7061x62567,5854 Myah Hwy,Snohomish County,tucker95@hotmail.com,418-25-3448,1983-07-01,2024/03/05,1,1,0.98-1
+Kellan,Beatty,+00(1)8416062478,26047 31th Street NorthWest,Lewis County,aschulist@hotmail.com,675-95-4593,2011-05-24,03/27/25,0.827,0.396,0.83-0.89
+Harrie,Wyman,688-937-1275,569 East Lynch Ave,Clark County,orin06@gmail.com,265-11-5825,1936-03-04,2024/12/04,0.348,0.893,0.34-0.41
+Loney,Brekke,602-884-9739x3171,81080 NE Schimmel Ave,Franklin County,benjaman.daniel@and.com,075-49-2792,1950-11-12,2024/03/04,0.377,0.81,0.36-0.42
+Myles,Wiza,091-794-8155,32544 Kayden Pl,Snohomish County,mitchell.elvia@yahoo.com,642-24-1908,2008-11-10,2024-07-28,1,0.686,0.99-1
+Jarret,Oberbrunner,085-631-6933x4261,2621 NW Denesik Ln,Snohomish County,ernser.autry@gerlach.com,769-87-2074,1951-02-03,2024-12-06,0.987,0.382,0.95-1
+Orie,Romaguera,00107960436,121414,Pierce County,jordon.hudson@and.com,847-94-5415,1938-10-10,2024/09/28,1,0.995,0.95-1
+Buffy,White,(738)666-9967x366,191 S Rath Lane,Snohomish County,summer69@wiza.net,156-61-3838,1966-09-26,2025-08-22,0.989,1,0.93-1
+Margot,Haley,1-359-368-0077,301 Skiles Alley,King County,emmons.rice@yahoo.com,484-59-8339,1996-05-12,2024/05/27,0.394,.,0.33-0.42
+Vernon,Hilll,06812458125,0399 Emanuel St West,Spokane County,wilford11@plc.biz,269-40-6342,1983-06-03,2024-12-08,0.123,0.209,0.1-0.28
+Kayla,Purdy,1-001-330-2484,8734 Mann Street,Pierce County,cjenkins@yahoo.com,005-62-5116,1974-10-02,08/07/2025,1,0.758,0.96-1
+Deloris,Hyatt,138.864.0493x356,null,King County,lyric69@inc.biz,409-45-5170,2007-12-20,2024/06/16,0.496,0.622,0.45-0.51
+Lissette,Conroy,03940620955,student,Pierce County,marylou59@yahoo.com,774-57-9245,1990-04-18,05/04/2025,1,0.531,0.99-1
+Gayla,Greenholt,(073)757-9272,367 Wilbur Drives Pl NW,Grant County,lola.heller@schinner.com,798-69-3804,1943-12-27,2024-03-10,0.274,0.635,0.26-0.3
+Jeffie,Dibbert,337.836.0349x5385,8504 SE Donnelly Ave,Jefferson County,ftreutel@llc.com,069-59-9133,2002-09-06,07/27/2024,0.976,1,0.94-0.99
+Maximo,Okuneva,(835)778-5036x39272,4976 SouthWest Thiel Way,King County,kailyn80@group.com,247-02-0396,2022-08-18,07/22/2024,0.522,0.062,0.46-0.62
+Johny,Bartell,944.343.9068,575 Adelard Street SW Apt. 324,Snohomish County,terrill41@johnson.com,583-65-7589,1932-01-04,08/19/2025,0.152,N/A,0.14-0.18
+Yoselin,Kris,754.463.3514,5438 3rd Ave. West,Kitsap County,krussel@yahoo.com,197-39-4185,2022-11-19,03/22/25,0.945,0.071,0.89-0.96
+Ira,Larkin,1-985-104-3885,23134 Bednar Avenue SE,Thurston County,terry.nicolas@gmail.com,728-29-8678,1983-08-20,10/24/2024,0,0,0-0.05
+Menachem,Hartmann,+23(6)1263074449,26146 Jacobs Highway Apt. 522,King County,haley.darrin@yahoo.com,084-62-5416,2016-02-19,2024/03/01,0.228,0.253,0.2-0.23
+Angelina,Padberg,775-109-9600x7098,6335 Shay Way NorthWest Apt. 382,King County,apadberg@gmail.com,346-70-6735,1934-11-17,2025/05/06,0.058,0.023,0.04-0.06
+Zita,Yost,(138)760-1012x3056,72595 Fisher Ave South,Island County,boehm.jayda@llc.com,827-59-0049,1995-02-09,08/11/2024,0.495,0.782,0.48-0.53
+Ermine,Swaniawski,1-270-127-5771,7038 SE 80th St.,Whatcom County,iconsidine@and.com,182-02-8170,1948-06-20,2024-09-19,0,0.341,0-0.05
+Oneida,Ankunding,435-385-4015x24876,259 45th Ave.,Whatcom County,becker.merwin@grimes.biz,729-94-7286,1965-11-06,2024/10/06,0.246,0.881,0.22-0.32
+Wm,Haag,08402534811,27105 NE Jonnie Dr,Pend Oreille County,adietrich@hotmail.com,275-73-0755,1941-04-02,07/31/24,0.324,0.558,0.3-0.4
+Olinda,Zboncak,(358)257-2990,742 Judd Lane SouthEast,Snohomish County,kanisha.buckridge@yahoo.com,777-75-4388,1956-09-04,2024-04-28,1,0.998,0.95-1
+Pate,Howell,1-578-871-8057x5985,196 Weimann Alley SouthEast,King County,neta.jakubowski@llc.info,679-70-5198,2019-12-23,07/15/2025,0.59,0.267,0.52-0.61
+Magan,Casper,246.682.4798x82623,154 Margret Viaduct Apt. 842 Avenue Apt. 842,King County,deckow.nigel@hotmail.com,385-52-1689,2021-06-25,09/23/2024,0.057,0.544,0.04-0.11
+Beatrix,Turcotte,229-707-7046x56167,89331 Jacobi Burgs Blvd SE,Thurston County,gael.rogahn@gmail.com,123-86-9187,1992-09-18,12/18/2024,0.01,0,0-0.02
+Dotty,Conroy,712.529.0889,79823 West Rowe Drive,Pierce County,bergstrom.blanch@altenwerth.biz,473-46-2733,1936-02-08,2025/08/28,0.933,0.999,0.91-0.96
+Milissa,Breitenberg,077.048.3485,41048 South Kunde Drive Apt. 618,King County,lavon95@yahoo.com,361-12-1248,1951-03-03,03/16/2024,0.335,0.775,0.3-0.34
+Santiago,Denesik,1-638-653-8620x3755,494 Shawn Ln N,Island County,lueilwitz.harper@yahoo.com,693-59-8486,1978-05-06,2024-12-15,0.246,0.171,0.23-0.27
+Elyssa,Marquardt,292-024-1170x36145,58314 18th St West,Columbia County,donnelly.dakoda@gmail.com,589-78-8499,2019-09-04,05/07/2025,0.99,0.993,0.94-1
+Tomeka,Dickinson,03906513868,133 Emely Hwy SW,Pierce County,hermann.maddison@schulist.com,466-26-9734,1933-02-05,2024-03-23,1,0.538,0.96-1
+Hyrum,Jacobs,1-917-177-0270x83103,7503 SouthWest Third Avenue,Kitsap County,madalynn.carter@plc.com,771-18-6804,1985-09-03,06/16/2024,0.261,0.336,0.22-0.31
+Isom,Lowe,(418)754-7684x81774,4206 E Jalissa Drive Apt. 925,King County,barrows.gilda@hotmail.com,536-75-4482,2002-10-05,2024-12-29,0.597,0.815,0.59-0.65
+Orin,Spencer,565.953.5191x4245,59528 SE Brittney Blvd,Thurston County,zemlak.tabetha@group.com,701-32-9119,1995-08-02,2025-02-23,0.004,0,0-0.04
+King,Bahringer,1-042-419-1377,073 56th Ave E,King County,dietrich.ari@hotmail.com,792-95-5017,2000-04-17,2024-09-22,0.254,0.106,0.19-0.33
+Veta,McDermott,817.871.8417,415 NW Considine Union Ste,Grant County,vanessa.moore@plc.com,631-93-4117,1994-01-12,02/28/2024,0.316,0.482,0.31-0.33
+Lise,Altenwerth,(936)179-5700,1388 Theodis Shoals Apt. 598 Dr N Apt. 598,Snohomish County,margy37@yahoo.com,570-58-4410,1967-10-31,06/16/2024,0.692,1,0.68-0.79
+Dora,O'Kon,01083707821,9774 73th Avenue SW Apt. 074,King County,tyriq.goodwin@carter.net,745-80-2994,1931-05-09,10/15/2024,0.739,N/A,0.72-0.74

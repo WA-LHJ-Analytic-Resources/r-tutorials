@@ -1,0 +1,384 @@
+---
+title: "Exploratory_Data_Analysis"
+project:
+  type: default
+  output-dir: docs
+format:
+  gfm:
+    toc: true
+date: 2025-11-13
+author: Allie Warren, allison.warren
+editor: visual
+prefer-html: true
+---
+
+## Exploratory Data Analysis
+
+This notebook shows an example of starting exploring a data set. The notebook uses the [tidyverse](https://tidyverse.org/packages) functions and conventions, which is a collection of packages for data science and visualization that have a common design. This also, for the most part, uses modern tidyverse conventions, using R version 4.3+ features. For example, it uses the pipe `|>` instead of `%>%` to chain together functions, this guide is a good resource for [modern R development](https://gist.github.com/sj-io/3828d64d0969f2a0f05297e59e6c15ad). This following notebook includes:
+
+-   observing key characteristics of data
+
+-   cleaning data, including identifying missing data
+
+-   combining data
+
+-   grouping data and calculating summary statistics
+
+-   visualizing data
+
+For the purpose of this notebook I have created a synthetic data set that can be used to illustrate some of the key challenges that may exist in a data set.
+
+## Setup
+
+```{r}
+# Loading packages
+
+# the pacman package is useful for managing package install/loading, When using pacman to load a package it will automatically install the package if it is not already installed
+if(!require("pacman")) install.packages("pacman") #but first we have to install pacman
+
+# This load packages for reading in data, transforming data, reshaping data, summarizing data, identifying missing data, working with dates and string, visualizing data (greating plots, map plots, color schemes), additional text cleaning, and viewing tables
+pacman::p_load(readr, dplyr, tidyr, purrr, skimr, naniar, lubridate, stringr, ggplot2, usmap, sf, viridis, textclean, DT)
+
+```
+
+## Reading in the Data
+
+```{r}
+# Reading in the data
+base_file_path <- "../data"
+
+wa_health_data <- read_csv(file.path(base_file_path, "synthetic_wa_records.csv"))
+
+# loads in an R list containing different forms of street suffixes (e.g. Street, St, Square, Sq, Route, Rte), used for address cleaning
+source(file.path(base_file_path, 'street_suffixes.R'))
+# view the data
+head(wa_health_data)
+```
+
+## Data Basics
+
+-   data type for each column
+
+-   size of the data
+
+-   functions for summarizing data, including counting missing data, unique counts per column, summary stats
+
+```{r}
+# can get basic characteristics of the data (data types, columns) and size of the data using base R functions
+str(wa_health_data)
+dim(wa_health_data)
+
+# for a more complete picture of the data there are useful packages that have summary functions, for example skim() from the skimr package
+skim(wa_health_data)
+
+
+
+```
+
+## Identifying Errors in the Data
+
+```{r}
+# there are 35 unique values in the County column - suggests a possible error - some additional/missing white space in some entries
+n_distinct(wa_health_data$county)
+# try converting to a single date format - observe that many don't parse
+length(which(is.na(mdy(wa_health_data$date))))
+```
+
+### Missing Data
+
+```{r}
+# val2 is character - check for alternate missing data types
+# skim shows counts of NA, but won't catch other forms of missing data
+check_na <- c("^\\.$", "NA", "-99", "N/A", "Not Applicable", "na", "n/a", "Null", "null")
+naniar::miss_scan_count(wa_health_data, check_na)
+```
+
+## Cleaning Data
+
+-   filter to relevant subset
+
+-   clean up string columns
+
+-   clean up date columns
+
+```{r}
+# formatting dates
+wa_health_data_cleaned <- wa_health_data |> 
+  mutate(date_format = lubridate::ymd(lubridate::parse_date_time(date, orders = c("%m/%d/%Y", "%Y-%m-%d", "%Y/%m/%d", "%m-%d-%Y", "%m/%d/%y"))))
+
+```
+
+### Cleaning Strings
+
+```{r}
+# cleaning up County names
+wa_health_data_cleaned <- wa_health_data_cleaned |> 
+  # remove County from the name and remove extra white space
+  mutate(county_name = str_replace_all(county, "County", "")|> str_squish())
+
+n_distinct(wa_health_data_cleaned$county_name)
+
+```
+
+### Replacing Missing Values and Converting to Numeric
+
+```{r}
+# replacing alternative missing values with NA
+replace_na <- c(".", "NA", "-99", "N/A", "Not Applicable", "na", "n/a", "Null", "null")
+wa_health_data_cleaned <- replace_with_na(wa_health_data_cleaned, replace = list(val2 = replace_na))
+
+# and convert data to numeric 
+wa_health_data_cleaned <- wa_health_data_cleaned |>
+  mutate(val2 = as.numeric(val2))
+
+# split the CI into 2 columns - split the column on '-' then convert new columns to numeric
+wa_health_data_cleaned <- wa_health_data_cleaned |>
+  separate_wider_delim(val1_CI, delim = "-", names = c('val1_lower_CI',
+                                                           'val1_upper_CI')) |>
+  mutate(across(ends_with("CI"), ~as.numeric(.)))
+```
+
+### Cleaning Address Data
+
+```{r}
+# identifies if the input string only contains letters
+letters_only <- function(x) {
+  x |>  
+  str_remove_all("[[:blank:]]") |> 
+  str_remove_all("[[:punct:]]") |>
+  str_detect("^[A-Za-z]+$")
+}
+
+# identifies if the input string contain U.S. street suffixes like avenue road, court, and different ways they are shortened.
+containsstreetsuffix <- function(x) {
+  x <- x |>
+  str_remove_all("[[:blank:]]") |> 
+  str_remove_all("[[:punct:]]")
+  
+  any(str_detect(str_to_lower(x), str_to_lower(street_suffix_list)))
+}
+
+# identify if the string contains fields that are not useful for geocoding and contain notes about living circumstance or unavailability of an address but which are not an address
+containsstreetsuffixremove <- function(x) {
+  x <- x |>
+  str_remove_all("[[:blank:]]") |> 
+  str_remove_all("[[:punct:]]") 
+  
+  any(str_detect(str_to_lower(x), c("student", "address", "homeless", "unkn", "null", "update"))) 
+}
+
+# identifies if the string is only numbers after removing blank spaces and punctuation - i.e. fields that are numbers only.
+numbers_only <- function(x) {
+  x |> 
+  str_remove_all("[[:blank:]]") |> 
+  str_remove_all("[[:punct:]]") |> 
+  str_detect("^[0-9]+$")
+}
+ 
+# fields that are empty after removing blank spaces and punctuation - i.e. field that are punctuation only
+punct_only<- function(x) x |> 
+  str_remove_all("[[:blank:]]") |> 
+  str_remove_all("[[:punct:]]") |> 
+  str_detect("^$")
+
+
+# Function to clean addresses, removing special characters and replacing common
+# error inputs with NA
+clean_address <- function(address) {
+  # beginning cleaning the input string, removing special characters
+  cleaned_address <- address |>
+    as.character() |> 
+    str_replace_all(pattern = "[^\x20-\x7E]", " ") |> 
+    textclean::replace_non_ascii() |> 
+    textclean::strip(char.keep = c("#", "-"), digit.remove = F, apostrophe.remove = T, lower.case = F)
+  
+  # if a PO box address replace with NA
+  cleaned_address <- case_when(str_detect(str_to_lower(cleaned_address), "^(po|p\\.o\\.|p box|p\\. o) ")  ~ NA_character_,
+                               TRUE ~cleaned_address)
+  
+  # convert to title case
+  cleaned_address <- str_to_title(cleaned_address)
+  
+  # if less than 7 characters (often sign of missing data) replace with NA
+  cleaned_address <- case_when(nchar(cleaned_address)<=7  ~ NA_character_,   TRUE ~cleaned_address)
+  
+  # replace with NA if the address doesn't look like an address because it is all numbers, all letters, missing a street suffix and matches a pattern of other strings
+  cleaned_address <- case_when(
+    letters_only(cleaned_address)==T ~ NA_character_,
+    numbers_only(cleaned_address)==T ~ NA_character_,
+    containsstreetsuffix(cleaned_address)==F &
+    containsstreetsuffixremove(cleaned_address)==T  ~ NA_character_,
+    TRUE ~ cleaned_address)
+  
+  cleaned_address
+  
+}
+
+# for each address I will apply the clean_address function using map_chr(), map_chr() always produces a character result (is therefore prefered to sapply which might return a list or vector)
+wa_health_data_cleaned$address_clean <- map_chr(wa_health_data_cleaned$street, clean_address) 
+```
+
+### Extracting Phone Number
+
+Want to extract at 10 digit phone number in the format xxx-xxx-xxxx from a string that might include phone extensions, various punctuation, country codes.
+
+```{r}
+
+clean_phone_numbers <- function(phone_number) {
+  # convert to character
+  phone_number <- as.character(phone_number) |> 
+      # first remove extension numbers - x followed by numbers at the end of the string
+    str_remove("x[0-9]+$") |> 
+    # remove blank space
+    str_remove_all("[[:blank:]]") |> 
+    # remove punctuation 
+    str_remove_all("[[:punct:]]") |> 
+    # remove and characters, such as + or any letters
+    str_remove_all("\\+") |> 
+    str_remove_all("[a-z]+")
+  
+  # handling country codes - if still longer than 10 digits, only take the last 10
+  # concatenating the last 10 characters of the string, using the format xxx-xxx-xxxx
+  plen <- nchar(phone_number)
+  phone_number_format <- str_c(str_sub(phone_number, plen-9, plen-7), "-", str_sub(phone_number, plen-6, plen-4), "-", str_sub(phone_number, plen-3, plen))
+  phone_number_format
+}
+
+wa_health_data_cleaned$phone_clean <- clean_phone_numbers(wa_health_data_cleaned$phone_number)
+```
+
+## Joining data
+
+Combining multiple data sets - this uses modern tidyverse conventions for joining, such as using `join_by(a == b`) instead of `by = c('a' = 'b')`
+
+```{r}
+# table of ACH regions and their associated counties
+ach_mapping <-
+  tibble(ACH = c('Olympic Community of Health', 'North Sound', 'Healthier Here', 'Elevate Health', 'Cascade Pacific Action Alliance', 'Southwest Washington', 'Greater Health Now', 'Thriving Together NCW', 'Better Health Together'),
+             counties = list(c('Clallam', 'Jefferson', 'Kitsap'), 
+                          c('Whatcom', 'Skagit', 'Snohomish', 'San Juan', 'Island'),
+                          c('King'),
+                          c('Pierce'),
+                          c('Grays Harbor', 'Mason', 'Thurston', 'Pacific', 'Lewis', 'Wahkiakum', 'Cowlitz'),
+                          c('Clark', 'Skamania', 'Klickitat'),
+                          c('Kittitas', 'Yakima', 'Benton', 'Franklin', 'Walla Walla', 'Columbia', 'Garfield', 'Asotin', 'Whitman'),
+                          c('Okanogan', 'Chelan', 'Douglas', 'Grant'),
+                          c('Adams', 'Lincoln', 'Ferry', 'Stevens', 'Pend Oreille', 'Spokane')))
+head(ach_mapping)
+
+# expand the table so that there is one row per county, which will make it easier to join to the other data
+ach_mapping_long <- ach_mapping |>
+  unnest(counties)
+
+# join the data, keeping all the rows from our data and any counties from the ACH mapping that were found in the data. The data is joined on the column `county_name` from the records data and the column `counties` from the ach mapping table
+wa_health_data_cleaned <- left_join(wa_health_data_cleaned, ach_mapping_long, by = join_by(county_name == counties))
+```
+
+## Viewing the Cleaned Data
+
+```{r}
+# View the first 50 rows of the data, 5 rows per page
+# with a horizontal scroll bar to see the different columns
+DT::datatable(head(wa_health_data_cleaned, n =50), 
+              options = list(
+                scrollX = TRUE,       # Enable horizontal scroll
+                pageLength = 5,       # Show 5 rows per page
+                autoWidth = TRUE      # Adjust column widths automatically
+  ),
+  class = 'cell-border stripe')
+```
+
+## Calculating summary stats
+
+This uses modern tidyverse conventions for grouping, so rather than using:
+
+`data |> group_by(grouping_column) |> summarise(mean = mean(value))`, it uses:
+
+`data |> summarise(mean = mean(value), .by = grouping_column)`
+
+Using .by produces grouping that is not persistent (so you don't need to use `ungroup()`), it is just applied to the operation where it is being used
+
+```{r}
+# calculating mean, median, sd, quantiles per group (County)
+wa_health_by_county <- wa_health_data_cleaned |> 
+  summarise(val1_mean = mean(val1),
+            val1_median = median(val1),
+            val1_sd = sd(val1),
+            val1_q25 = quantile(val1, .25), 
+            val1_q75 = quantile(val1, .75),
+            val2_mean = mean(val2, na.rm = T), # this removes NAs when calculating the mean, otherwise the result would produce NA
+            num_records = n(), .by = county_name)
+
+
+```
+
+## Visualizing
+
+### Bar Plots
+
+```{r}
+# creating a bar plot of the summarized data
+# use reorder on the axis to set the order of the bars and change the color
+ggplot(wa_health_by_county,
+       aes(x = reorder(county_name, val1_mean, decreasing = T), val1_mean)) +
+  geom_col(fill = "#060270") +
+  # add text labels of the value of above the bar
+  geom_text(aes(label = round(val1_mean, 2)), vjust = -.2, color = 'black', size = 3) +
+  theme_bw() + # set a basic black and white theme
+  xlab('County') + # change the name of the x-axis label
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) # rotate the x-axis labels so that they fit/can be read
+
+# alternative bar plot
+# creates a color scheme where bars alternate in color so it is easier to distinguish, to do this first have to sort the data and add a column grouping the data into two groups
+wa_health_by_county <- wa_health_by_county |>
+  arrange(desc(val1_mean)) |> # sort in descending order
+  mutate(color_group = row_number() %% 2)  # add a column based on the row number
+  
+wa_health_by_county |> 
+  ggplot(aes(x = reorder(county_name, val1_mean), val1_mean)) +
+  # create column coloring the bars based on the column created
+  geom_col(aes(fill = factor(color_group))) +
+  # create a custom color scale for the data
+  scale_fill_manual(values = c("0" = "#060270", "1" = "#4a4ab8")) +
+  theme_bw() + # set theme to black and white
+  guides(fill = 'none') + # remove the legend
+  xlab('County') + # change axis label
+  coord_flip() # rotate the plot so that it is easier to read the axis labels
+
+```
+
+### Map Plot
+
+```{r}
+# pull US mapping data
+us_county_map <- usmap::us_map('counties')
+# subset to WA state data
+WA_map_counties <- filter(us_county_map, abbr == 'WA') |>
+  # simplify county names
+	mutate(county = str_replace(county, " County", ""))
+# convert a geometry object to an sfc object for plotting purposes
+WA_sfc <- st_as_sfc(WA_map_counties, crs = usmap_csv()@projargs)
+# get subset of map object
+# creates sf object, which extends data.frame like objects with a  simple feature list column
+WA_sf_data <- st_sf(data.frame(fips = unique(WA_map_counties$fips), county = WA_map_counties$county, geometry = WA_sfc))
+# join map data with the data you want to plot/fill in each county with
+WA_sf_map <- left_join(WA_sf_data, wa_health_by_county, join_by(county == county_name))
+# find the centroid of each county
+WA_sf_map$centroids <- st_centroid(WA_sf_map$geometry)
+
+wa_map_plot <- ggplot(WA_sf_map) +
+  # use geom_sf to create map - pulls from geometry column in the data
+  # set fill for each county
+	geom_sf(aes(fill =val1_mean), color = 'white') +
+  # change fill - alternate color palette
+  scale_fill_viridis_c(option = 'viridis') +
+  # add county labels
+	geom_sf_text(aes(label = county), size = 3, color = 'black') +
+  coord_sf(crs = st_crs(4283)) + #needed to make flat/horizontally aligned map for visualizing purposes
+  labs(fill = 'value mean') + # adjust legend title
+  # set clean theme that removes axis labels
+  theme_void()
+
+wa_map_plot
+
+```

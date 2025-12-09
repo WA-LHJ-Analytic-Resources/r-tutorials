@@ -1,0 +1,411 @@
+---
+title: "Survey Analysis"
+project:
+  type: default
+  output-dir: docs
+format:
+  gfm:
+    toc: true
+date: 2025-12-09
+author: Allie Warren, allison.warren
+editor: visual
+prefer-html: true
+---
+
+# Survey Data Analysis Tutorial
+
+A guide to analyzing survey data using the R {survey} package
+
+## DFP COVID-19 Tracking Poll
+
+This tutorial uses data from periodic tracking polls conducted by Data for Progress to track Americans response to the COVID-19 pandemic. The survey contains polls from 25 weeks, with each week's survey including interviews with 800-1200 respondents. The data contains individual level responses to the survey, with post-stratification weights to make each week's sample nationally representative of American adults and separate weights to make representative of American registered voters.
+
+## R {survey} package
+
+This tutorial uses the R {survey} package, which is a very useful package for applying survey weights, calculating means, creating weighted proportion tables, and calculating statistical tests.
+
+When using the {survey} package, you first create a survey design object using the function `svydesign()`, which allows you to specify the survey weights. The {survey} package uses base R conventions, to refer to variables/column names the precede the names with a tilde (\~). Then we can use various {survey} functions to apply the weights and calculate various survey statistics. Additional useful functions are:
+
+-   `svyby()`: compute survey statistics on subsets of a survey defined by factors
+-   `svymean()`: compute means for the survey data
+-   `svytable()`: contingency tables, computes a weighted cross tabulation, which is useful for producing outputs for plots
+-   `svychisq()`: chisquared tests of association for survey data, computes first and second order Rao-Scott correction to the Peason chisquared test, can specify F stat (default), Chisq, Wald, adjWald, lincom, or saddlepoint
+-   `svytest()`: one-sample or two-sample t-test
+
+## Resources
+
+-   [Survey package documentation](https://r-survey.r-forge.r-project.org/survey/)
+-   [Survey examples from UCLA](http://r-survey.r-forge.r-project.org/survey/ucla-examples.pdf)
+-   [Introduction to Survey Package](https://zacharylhertz.github.io/posts/2021-06-29-survey-package/index.html): used as inspiration for these examples
+-   [Data Source](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XJLZIN)
+
+## Setup and Data Loading
+
+```{r}
+# Loading packages
+
+# the pacman package is useful for managing package install/loading, When using pacman to load a package it will automatically install the package if it is not already installed
+if(!require("pacman")) install.packages("pacman") #but first we have to install pacman
+
+# This load packages for reading in data, transforming data, reshaping data, working with strings, summarizing data, analyzing surey data, reading in other data types, formatting percentages, structuring code, creating other types of plots, creating general plots, handlin factors
+pacman::p_load(readr, plyr, dplyr, tidyr, stringr, skimr, survey, haven, scales, magrittr, apyramid, ggplot2, forcats)
+```
+
+```{r}
+base_file_path <- "../data"
+# Load the DFP COVID-19 survey data
+dfp_data <- read_dta(file.path(base_file_path, "dataverse_files/dfp_covid_tracking_poll.dta"))
+
+# view a subset of the data
+head(dfp_data)
+
+# get stats for a subset of the data
+skimr::skim(dfp_data[,1:25])
+```
+
+## Define the Survey Design
+
+The first step is defining the survey design object with appropriate weights
+
+```{r}
+# Create survey design object
+# the survey data includes post-stratification weights, which are implemented to make each week’s sample nationally representative of American adults and American registered voters by gender, age, region, education, race, the interaction of education and race, and previous presidential vote.
+dfp_design <- svydesign(
+  ids = ~1,                      # No clustering 
+  weights = ~nationalweight,     # Survey weights for national adult population
+  data = dfp_data)
+
+# We could also create a survey design object for a subset of the data - registered voters subset, for this subset, we use rvweight instead
+dfp_rv_design <- svydesign(
+    ids = ~1,
+    weights = ~rvweight, # Survey weights for national registered voter population
+    data = filter(dfp_data, !is.na(rvweight)))
+
+```
+
+## Adding new variables
+
+```{r}
+# adding a binary variable for vaccination status
+# in the data 1=Yes, received at least one COVID-19 vaccination, 2=No, I have not received a COVID-19 vaccination
+dfp_design<-update(dfp_design, vax_bin=if_else(vax == 1, 1, 0))
+```
+
+## Calculate Weighted Means and Proportions
+
+### Single Variable Analysis
+
+```{r}
+# example survey question/responses
+dfp_data$corona2 |> unique()
+
+# Proportion worried about a COVID-19 epidemic, on a scale 1 (very concerned) to 4 (not concerned)
+svymean(~corona2, dfp_design, na.rm = TRUE)
+# With confidence intervals
+confint(svymean(~corona2, dfp_design, na.rm = TRUE))
+
+# Mean approval of CDC COVID handling - scale 1 (Strongly Approve) to 4 (Strongly Disapprove), removing NAs and those who answered 5 (Not Sure)
+svymean(~dfp_public_figure_ap_10, subset(dfp_design, dfp_public_figure_ap_10 %in% c(1,2,3,4)), na.rm = TRUE)
+
+# Mean approval of CDC COVID handling among registered voters - scale 1 (Strongly Approve) to 4 (Strongly Disapprove), removing NAs and those who answered 5 (Not Sure)
+svymean(~dfp_public_figure_ap_10, subset(dfp_rv_design, dfp_public_figure_ap_10 %in% c(1,2,3,4)), na.rm = TRUE)
+```
+
+### By Group
+
+```{r}
+# COVID worry by age
+# add an age group category
+dfp_design<-update(dfp_design, age_group=case_when(age < 30 ~ 1,
+                                                   age < 45 ~ 2,
+                                                   age < 65 ~ 3,
+                                                   age >= 65 ~ 4))
+
+# add a category for very or somewhat concerned (a 1 or 2 survey response)
+dfp_design<-update(dfp_design, corona2_worried=ifelse(corona2 %in% c(1,2), 1, 0))
+
+# Calculate proportions with CIs
+worry_props <- svyby(
+  formula = ~corona2_worried,  # Very or somewhat concerned
+  by = ~age_group,
+  design = dfp_design,
+  FUN = svymean,
+  na.rm = TRUE,
+  vartype = c("se", "ci")
+)
+
+# Clean up for plotting
+worry_plot_data <- worry_props |>
+  dplyr::rename(proportion = corona2_worried) |> 
+  mutate(age_group = case_when(age_group == 1 ~ '18-29',
+                               age_group == 2 ~ '30-44',
+                               age_group == 3 ~ '45-64',
+                               age_group == 4 ~ '65+'))
+
+# Create plot, showing proportion by age group
+ggplot(worry_plot_data, aes(x = age_group, y = proportion)) +
+  geom_col(fill = "steelblue") + # set color
+  geom_errorbar(aes(ymin = ci_l, ymax = ci_u), width = 0.3, linewidth = 0.8) + # add error bars
+  geom_text(aes(label = percent(proportion, accuracy = 0.1)),vjust = -0.5, nudge_y = 0.02) + # add labels above the bars
+  scale_y_continuous(labels = percent_format(), limits = c(0, 1)) + # format y-axis as percents
+  labs(title = "COVID-19 Worry by Age",
+    subtitle = "Proportion 'Very' or 'Somewhat' Concerned About a Covid-19 Epidemic",
+    x = "Age Group", y = "Proportion", caption = "Error bars show 95% confidence intervals") +
+  theme_minimal() + # set theme
+  theme(plot.title = element_text(face = "bold")) # make title bold
+```
+
+### Over Time
+
+```{r}
+# the survey data includes results from multiple time points/waves of covid
+wave_comparison <- svyby(
+  formula = ~I(corona2 <= 2),  # can create an indicator variable, for those very or somewhat concerned about COVID
+  by = ~wave, # calculate means per wave
+  design = dfp_design,
+  FUN = svymean,
+  na.rm = TRUE,
+  vartype = "ci" # also return confidence intervals
+)
+
+# Plot trends over time
+ggplot(wave_comparison, aes(x = wave, y = `I(corona2 <= 2)TRUE`)) +
+  geom_line(linewidth = 1, color = "steelblue") +
+  geom_ribbon(aes(ymin = `ci_l.I(corona2 <= 2)TRUE`, ymax = `ci_u.I(corona2 <= 2)TRUE`), alpha = 0.2) + # add error ribbon showing the confidence intervals
+  scale_y_continuous(labels = percent_format()) + # format y axis as percent
+  labs(title = "COVID-19 Concern Over Time",
+    x = "Survey Wave",
+    y = "Proportion Very or Somewhat Concerned") +
+  theme_minimal() 
+```
+
+### By Multiple Grouping Variables
+
+```{r}
+# Vaccine likelihood by region and age group 
+# ages are 18-98, grouped into 5 categories
+# 'How likely are you to get the [COVID-19] vaccine?'on scale of 1 (very likely) to 4 (very unlikely)
+vax_by_region_age <- svyby(
+  formula = ~vax_likely,
+  by = ~region + age_group,
+  design = dfp_design,
+  FUN = svymean,
+  na.rm = TRUE,
+  vartype = c('se', 'ci')) # return standard error and confidence interval, as well as mean
+
+# format output for plotting - converting numeric categories to named
+vax_by_region_age <- vax_by_region_age |> 
+  mutate(region_name = case_when(region == 1 ~ 'Northeast',
+                                 region == 2 ~ 'Midwest',
+                                 region == 3 ~ 'South',
+                                 region == 4 ~ 'West'),
+         age_group_name = case_when(age_group == 1 ~ '18-29',
+                                    age_group == 2 ~ '30-44',
+                                    age_group == 3 ~ '45-64',
+                                    age_group == 4 ~ '65+'))
+
+
+# create bar plot, with bars showing the confidence intervals
+ggplot(vax_by_region_age, aes(region_name, vax_likely, fill = age_group_name)) +
+  geom_col(position = position_dodge2()) +
+  geom_errorbar(aes(ymin = ci_l, ymax = ci_u), position = position_dodge2()) +
+  theme_bw() +
+  viridis::scale_fill_viridis(discrete = TRUE, option = 'D') +
+  labs(x = 'Region',
+       y = 'Average Likelihood of Vaccination\n on a Scale 1 (Very Likely) to 5 (Very Unlikely)',
+       fill = 'Age Group',
+       title = 'Likelihood of Getting Vaccinated by Region and Age',
+       subtitle = "1 indicates 'very likely' to get vaccinated, 5 indicates 'very unlikely' to get vaccinated") +
+   theme(plot.title = element_text(face = "bold")) # make title bold
+```
+
+## Chi-Square Tests
+
+Tests whether two categorical variables are indendent or associated
+
+```{r}
+# Test if vaccination status differs by political party
+# outputs: x-squared: test statistic, higher = stronger association
+# df = degrees of freedom, p-value
+svychisq(~vax_bin + political_party, dfp_design, statistic = "Chisq")
+
+# With Rao-Scott adjusted F test (recommended for survey data) - accounts for complex survey design and weighting, more robust
+# outputs: F: test statistic, higher = stronger association
+# ndf: numerator degrees of freedom, ddf: denominator degrees of freedom, p-value
+svychisq(~vax_bin + political_party, dfp_design, statistic = "F")
+```
+
+## Comparing Group Means 
+
+### T-test
+
+Tests whether the mean of a variable differs between two groups
+
+```{r}
+# Compare worry levels by gender - corona2 asks "how concerned are you about a coronavirus epidemic here in the United States?"
+# responses are on a scale 1 to 4, with 1 being 'very concerned', and 4 being 'not at all concerned'
+# can look a the proportions of respondents answering each for male (1) vs female (2)
+concern_proportions =  data.frame(male = svytable(formula = ~corona2, design = subset(dfp_design, gender == 1)) |> prop.table(),
+female = svytable(formula = ~corona2, design = subset(dfp_design, gender == 2)) |> prop.table(),
+survey_response = c('very concerned', 'somewhat concerned', 'not very concerned', 'not at all concerned'))
+concern_proportions
+
+# outputs: t: test statistics, negative = first group (male) has lower mean than the second group (female)
+# df: degrees of freedom, p-value, difference in mean, confidence interval
+svyttest(corona2 ~ gender, dfp_design)
+
+```
+
+### Proportional Odds Model
+
+A t-test is intended for continuous variables, while the response to 'How concerned are you about a coronavirus epidemic here in the United States?' is an ordinal variable. We can also compare groups using proportional odds with ordinal logistic regression.
+
+```{r}
+# Ensure corona2 is ordered factor
+dfp_data <- dfp_data |>
+  mutate(corona2_factor = factor(corona2,
+      levels = 1:4,
+      labels = c("Very concerned", "Somewhat concerned", 
+                 "Not very concerned", "Not at all concerned"),
+      ordered = TRUE))
+# Update design
+dfp_design <- update(dfp_design, corona2_factor = dfp_data$corona2_factor)
+
+# Proportional odds model
+# gives the log odds ratio for the relationship between gender and covid concern
+# (negative = males have lower odds of being in high concern categories)
+svyolr(corona2_factor ~ gender, design = dfp_design)
+```
+
+## Regression Analysis
+
+```{r}
+# Logistic regression: predict (binary outcome of) vaccination status based on multiple predictors
+vax_model <- svyglm(
+  vax_bin ~ age + gender + political_party + education,
+  design = dfp_design,
+  family = quasibinomial()
+)
+
+# outputs: coefficients: log odds, standard error, t-value, p-value, significance
+summary(vax_model)
+
+# Extract coefficients with confidence intervals
+tidy_model <- broom::tidy(vax_model, conf.int = TRUE)
+
+```
+
+### Coefficient Plot (Regression Results)
+
+```{r}
+# Using the regression model from earlier
+# adjust data for plotting
+coef_plot_data <- tidy_model |>
+  filter(term != "(Intercept)") |>
+  # convert political party numbers to responses
+  mutate(term_name = case_when(term == 'political_party2' ~ 'Not very strong Democrat',
+                               term == 'political_party3' ~ 'Independent Democrat',
+                               term == 'political_party4' ~ 'Independent - neither',
+                               term == 'political_party5' ~ 'Independent Republican',
+                               term == 'political_party6' ~ 'Other - leaning Democrat',
+                               term == 'political_party7' ~ 'Other - neither',
+                               term == 'political_party8' ~ 'Other - leaning Republican',
+                               term == 'political_party9' ~ 'Not very strong Republican',
+                               term == 'political_party10' ~ 'Strong Republican',
+                               TRUE ~ term),
+    # add variable significance to term name
+    term_signif = paste0(term_name, case_when(p.value <= .001 ~ '***',
+                                    p.value <= .01 ~ '**',
+                                    p.value <= .05 ~  '*',
+                                    p.value <= .1 ~ '.',
+                                    p.value <= 1 ~ " "))) |> 
+  # order terms by estimate value, set as a factor (will preserve order for plotting)
+  mutate(term_signif = fct_reorder(term_signif, estimate))
+
+# create plot of log odds ratios, with confidence intervals for each term
+ggplot(coef_plot_data, aes(x = estimate, y = term_signif)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_point(size = 3, color = "steelblue") +
+  geom_errorbar(aes(xmin = conf.low, xmax = conf.high),
+                height = 0.2,
+                linewidth = 0.8) +
+  labs(title = "Predictors of Vaccination Status Compared to Reference",
+    x = "Log Odds Ratio",
+    y = "Predictor") +
+  theme_minimal()
+```
+
+## Subgroup Analysis
+
+Computing weighted crosstabulation for subsets of the data
+
+```{r}
+# Analyze only parents with school-age children
+# Q44 = are you the parent or guardian of a child currently enrolled in school
+parents_design <- subset(dfp_design, Q44 == 1)
+
+# School reopening preferences among parents
+# 1 = Strongly support school reopening, 4 = strongly oppose, 5 = not sure
+# svytable compute weighted crosstabulation
+school.parents <- svytable(~schools_1, design=parents_design) |> 
+  prop.table() |> 
+  multiply_by(100) |> 
+  round(digits=1) |> 
+  as.data.frame() |> 
+  mutate(group = 'parents')
+
+# Compare to non-parents
+nonparents_design <- subset(dfp_design, Q44 == 2)
+school.nonparents <- svytable(~schools_1, design=nonparents_design) |> 
+  prop.table() |> 
+  multiply_by(100) |> 
+  round(digits=1) |> 
+  as.data.frame() |> 
+  mutate(group = 'non parents')
+
+
+# Combine into a single dataframe for plotting
+school_parents_plot <- rbind(school.parents, school.nonparents)
+
+# Create a variable, label_ypos, equal to the halfway point
+# in each bar for specifying where the labels should be.
+school_parents_plot <- plyr::ddply(school_parents_plot, "group",
+              transform, 
+              label_ypos=cumsum(Freq) - 0.5*Freq)
+
+color_scale <- viridis::viridis(5)
+color_scale[5] <- "#575151"
+
+# plot the proportions of responses for each subset of the data
+ggplot(school_parents_plot, aes(x = group, y = Freq, fill = schools_1)) + 
+  geom_bar(stat="identity", 
+           position = position_stack(reverse = TRUE)) + 
+  geom_text(aes(y=label_ypos, label=Freq), 
+            color="white", size=2.5) +
+  coord_flip() + 
+  scale_fill_manual(labels = c("Strongly Support", 
+                               "Somewhat Support", 
+                               "Somewhat Oppose", 
+                               "Strongly Oppose",
+                               "Not Sure"), values=color_scale) +
+  theme_minimal() + 
+  ylab("Percent") + xlab('') +
+  labs(fill="Support for School Reopening") +
+  ggtitle("Support for School Reopening From Parents and Non Parents\nof School Age Children")
+
+# another option for visualizing
+school_parents_plot |> 
+  mutate(school_responses = as.factor(case_when(schools_1 == 1 ~ 'Strongly Support',
+                                      schools_1 == 2 ~ 'Somewhat Support',
+                                      schools_1 == 3 ~ 'Somewhat Oppose',
+                                      schools_1 == 4 ~ 'Strongly Oppose',
+                                      schools_1 == 5 ~ 'Not Sure'))) |> 
+  age_pyramid(age_group = "school_responses",
+    split_by = "group", 
+    count ='Freq',
+    show_midpoint = FALSE) +
+  labs(title = "Support for School Reopening From Parents and Non Parents\nof School Age Children", 
+       x = "Support for School Reopening", 
+       y = "Percent") +
+  theme_bw()
+```

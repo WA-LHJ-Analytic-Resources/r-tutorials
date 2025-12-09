@@ -1,0 +1,10 @@
+# Ignore Quarto render artifacts except what GitHub needs
+*.html
+/.quarto/
+
+# Ignore intermediate files
+.Rhistory
+.RData
+.Rproj.user
+.Ruserdata
+*_cache/
