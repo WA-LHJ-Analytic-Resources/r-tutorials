@@ -100,9 +100,11 @@ dfp_design<-update(dfp_design, vax_bin=if_else(vax == 1, 1, 0))
 dfp_data$corona2 |> unique()
 
 # Proportion worried about a COVID-19 epidemic, on a scale 1 (very concerned) to 4 (not concerned)
-svymean(~corona2, dfp_design, na.rm = TRUE)
+mean_covid_worry <- svymean(~corona2, dfp_design, na.rm = TRUE)
+mean_covid_worry
 # With confidence intervals
-confint(svymean(~corona2, dfp_design, na.rm = TRUE))
+confint(mean_covid_worry)
+
 
 # Mean approval of CDC COVID handling - scale 1 (Strongly Approve) to 4 (Strongly Disapprove), removing NAs and those who answered 5 (Not Sure)
 svymean(~dfp_public_figure_ap_10, subset(dfp_design, dfp_public_figure_ap_10 %in% c(1,2,3,4)), na.rm = TRUE)
@@ -167,6 +169,8 @@ wave_comparison <- svyby(
   na.rm = TRUE,
   vartype = "ci" # also return confidence intervals
 )
+
+wave_comparison
 
 # Plot trends over time
 ggplot(wave_comparison, aes(x = wave, y = `I(corona2 <= 2)TRUE`)) +
@@ -235,7 +239,7 @@ svychisq(~vax_bin + political_party, dfp_design, statistic = "Chisq")
 svychisq(~vax_bin + political_party, dfp_design, statistic = "F")
 ```
 
-## Comparing Group Means 
+## Comparing Group Means
 
 ### T-test
 

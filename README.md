@@ -18,6 +18,13 @@ The notebooks (found in the notebooks folder) are:
 - [R for Data Science](https://r4ds.had.co.nz/): R textbook for data science workflows and learning tidyverse conventions
 - [Advanced R](https://adv-r.hadley.nz/index.html): R textbook for more advanced R concepts
 
+## Data Visualization Resources
+- [The R Graph Gallery](https://r-graph-gallery.com/): a collection of many different types of charts made with R, with a focus on using tidyverse and ggplot2, good for inspiration and showing the different possibilities of creating visualizations with R. Also shows the various [theme options](https://r-graph-gallery.com/192-ggplot-themes.html) when using ggplot2.
+- [Modern Data Visualization with R](https://rkabacoff.github.io/datavis/index.html): A textbook that walks through all the aspects of creating visualizations with ggplot2, and shows other options for visualizations
+- [Accessible color palette generator](https://venngage.com/tools/accessible-color-palette-generator): creates many different options for an accessible color palette. The {[viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)} package in R is also useful for accessible color palettes.
+- [Saloni's guide to data visualization](https://www.scientificdiscovery.dev/p/salonis-guide-to-data-visualization): an interesting blog post about data visualization, why it is important, and how to make it better. [Our World in Data](https://ourworldindata.org/) has a lot of good examples of clear data visualizations. 
+- [Create your own custom ggplot2 theme](https://rfortherestofus.com/2025/04/ggplot2-theme): a guide for creating a custom theme for ggplot2 plots, can be useful for establishing a consistent style guide for your team. There is also an [explainer for the BBC's custom ggplot2 theme](https://medium.com/bbc-visual-and-data-journalism/how-the-bbc-visual-and-data-journalism-team-works-with-graphics-in-r-ed0b35693535)
+
 ## Other Useful Resources & Packages
 - [Mockaroo](https://mockaroo.com/): useful for creating mock data sets
 - [esquisse](https://dreamrs.github.io/esquisse/): package for interactively exploring creating data visualizations

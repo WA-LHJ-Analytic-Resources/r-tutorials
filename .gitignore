@@ -1,6 +1,6 @@
 # Ignore Quarto render artifacts except what GitHub needs
-*.html
 /.quarto/
+*.html
 
 # Ignore intermediate files
 .Rhistory
