@@ -92,7 +92,7 @@ pacman::p_load(readr, plyr, dplyr, tidyr, stringr, skimr, survey, haven, scales,
 
 ``` r
 base_file_path <- "../data"
-# Load the DFP COVID-19 survey data
+# Load the DFP COVID-19 survey data - data is a Stata DTA file
 dfp_data <- read_dta(file.path(base_file_path, "dataverse_files/dfp_covid_tracking_poll.dta"))
 
 # view a subset of the data
@@ -225,7 +225,8 @@ dfp_data$corona2 |> unique()
 
 ``` r
 # Proportion worried about a COVID-19 epidemic, on a scale 1 (very concerned) to 4 (not concerned)
-svymean(~corona2, dfp_design, na.rm = TRUE)
+mean_covid_worry <- svymean(~corona2, dfp_design, na.rm = TRUE)
+mean_covid_worry
 ```
 
               mean     SE
@@ -233,7 +234,7 @@ svymean(~corona2, dfp_design, na.rm = TRUE)
 
 ``` r
 # With confidence intervals
-confint(svymean(~corona2, dfp_design, na.rm = TRUE))
+confint(mean_covid_worry)
 ```
 
                2.5 %   97.5 %
@@ -275,8 +276,7 @@ worry_props <- svyby(
   design = dfp_design,
   FUN = svymean,
   na.rm = TRUE,
-  vartype = c("se", "ci")
-)
+  vartype = c("se", "ci"))
 
 # Clean up for plotting
 worry_plot_data <- worry_props |>
@@ -314,6 +314,63 @@ wave_comparison <- svyby(
   vartype = "ci" # also return confidence intervals
 )
 
+wave_comparison
+```
+
+       wave I(corona2 <= 2)FALSE I(corona2 <= 2)TRUE ci_l.I(corona2 <= 2)FALSE
+    1     1            0.1017793           0.8982207                0.07951775
+    2     2            0.1017496           0.8982504                0.07925061
+    3     3            0.1071787           0.8928213                0.08456781
+    4     4            0.1143742           0.8856258                0.09076939
+    5     5            0.1178646           0.8821354                0.09295651
+    6     6            0.1470343           0.8529657                0.12086775
+    7     7            0.1591071           0.8408929                0.13091118
+    8     8            0.1973984           0.8026016                0.16372884
+    9     9            0.1760470           0.8239530                0.14572055
+    10   10            0.1471789           0.8528211                0.11960100
+    11   11            0.1311718           0.8688282                0.10373764
+    12   12            0.1529864           0.8470136                0.12593908
+    13   13            0.1806875           0.8193125                0.15154824
+    14   14            0.2038551           0.7961449                0.16742204
+    15   15            0.1867288           0.8132712                0.15766466
+    16   16            0.1468513           0.8531487                0.11822610
+    17   17            0.1298597           0.8701403                0.10685083
+    18   18            0.1507760           0.8492240                0.12536826
+    19   19            0.1615176           0.8384824                0.13566235
+    20   20            0.1521489           0.8478511                0.12660247
+    21   21            0.1685529           0.8314471                0.14351311
+    22   22            0.1956219           0.8043781                0.16822491
+    23   23            0.1772487           0.8227513                0.14903345
+    24   24            0.2374642           0.7625358                0.20600792
+    25   25            0.2548837           0.7451163                0.22923960
+       ci_l.I(corona2 <= 2)TRUE ci_u.I(corona2 <= 2)FALSE ci_u.I(corona2 <= 2)TRUE
+    1                 0.8759591                 0.1240409                0.9204823
+    2                 0.8757513                 0.1242487                0.9207494
+    3                 0.8702103                 0.1297897                0.9154322
+    4                 0.8620211                 0.1379789                0.9092306
+    5                 0.8572274                 0.1427726                0.9070435
+    6                 0.8267991                 0.1732009                0.8791322
+    7                 0.8126970                 0.1873030                0.8690888
+    8                 0.7689321                 0.2310679                0.8362712
+    9                 0.7936265                 0.2063735                0.8542795
+    10                0.8252433                 0.1747567                0.8803990
+    11                0.8413940                 0.1586060                0.8962624
+    12                0.8199663                 0.1800337                0.8740609
+    13                0.7901733                 0.2098267                0.8484518
+    14                0.7597119                 0.2402881                0.8325780
+    15                0.7842070                 0.2157930                0.8423353
+    16                0.8245234                 0.1754766                0.8817739
+    17                0.8471315                 0.1528685                0.8931492
+    18                0.8238162                 0.1761838                0.8746317
+    19                0.8126271                 0.1873729                0.8643377
+    20                0.8223047                 0.1776953                0.8733975
+    21                0.8064072                 0.1935928                0.8564869
+    22                0.7769810                 0.2230190                0.8317751
+    23                0.7945361                 0.2054639                0.8509666
+    24                0.7310795                 0.2689205                0.7939921
+    25                0.7194722                 0.2805278                0.7707604
+
+``` r
 # Plot trends over time
 ggplot(wave_comparison, aes(x = wave, y = `I(corona2 <= 2)TRUE`)) +
   geom_line(linewidth = 1, color = "steelblue") +
@@ -363,7 +420,7 @@ ggplot(vax_by_region_age, aes(region_name, vax_likely, fill = age_group_name)) +
        y = 'Average Likelihood of Vaccination\n on a Scale 1 (Very Likely) to 5 (Very Unlikely)',
        fill = 'Age Group',
        title = 'Likelihood of Getting Vaccinated by Region and Age',
-       subtitle = "1 indicates 'very likely' to get vaccinated, 5 indicates 'very unlikely' to get vaccinated") +
+       subtitle = "1 indicates 'very likely' to get vaccinated, 4 indicates 'very unlikely' to get vaccinated") +
    theme(plot.title = element_text(face = "bold")) # make title bold
 ```
 
@@ -371,7 +428,7 @@ ggplot(vax_by_region_age, aes(region_name, vax_likely, fill = age_group_name)) +
 
 ## Chi-Square Tests
 
-Tests whether two categorical variables are indendent or associated
+Tests whether two categorical variables are independent or associated
 
 ``` r
 # Test if vaccination status differs by political party

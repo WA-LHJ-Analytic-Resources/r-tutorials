@@ -277,15 +277,8 @@ wa_health_data_cleaned <- left_join(wa_health_data_cleaned, ach_mapping_long, by
 ## Viewing the Cleaned Data
 
 ```{r}
-# View the first 50 rows of the data, 5 rows per page
-# with a horizontal scroll bar to see the different columns
-DT::datatable(head(wa_health_data_cleaned, n =50), 
-              options = list(
-                scrollX = TRUE,       # Enable horizontal scroll
-                pageLength = 5,       # Show 5 rows per page
-                autoWidth = TRUE      # Adjust column widths automatically
-  ),
-  class = 'cell-border stripe')
+# View the first 10 rows of the data
+head(wa_health_data_cleaned, n =10)
 ```
 
 ## Calculating summary stats

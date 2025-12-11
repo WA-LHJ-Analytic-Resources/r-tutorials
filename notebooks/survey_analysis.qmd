@@ -105,7 +105,6 @@ mean_covid_worry
 # With confidence intervals
 confint(mean_covid_worry)
 
-
 # Mean approval of CDC COVID handling - scale 1 (Strongly Approve) to 4 (Strongly Disapprove), removing NAs and those who answered 5 (Not Sure)
 svymean(~dfp_public_figure_ap_10, subset(dfp_design, dfp_public_figure_ap_10 %in% c(1,2,3,4)), na.rm = TRUE)
 
@@ -133,8 +132,7 @@ worry_props <- svyby(
   design = dfp_design,
   FUN = svymean,
   na.rm = TRUE,
-  vartype = c("se", "ci")
-)
+  vartype = c("se", "ci"))
 
 # Clean up for plotting
 worry_plot_data <- worry_props |>
@@ -219,13 +217,13 @@ ggplot(vax_by_region_age, aes(region_name, vax_likely, fill = age_group_name)) +
        y = 'Average Likelihood of Vaccination\n on a Scale 1 (Very Likely) to 5 (Very Unlikely)',
        fill = 'Age Group',
        title = 'Likelihood of Getting Vaccinated by Region and Age',
-       subtitle = "1 indicates 'very likely' to get vaccinated, 5 indicates 'very unlikely' to get vaccinated") +
+       subtitle = "1 indicates 'very likely' to get vaccinated, 4 indicates 'very unlikely' to get vaccinated") +
    theme(plot.title = element_text(face = "bold")) # make title bold
 ```
 
 ## Chi-Square Tests
 
-Tests whether two categorical variables are indendent or associated
+Tests whether two categorical variables are independent or associated
 
 ```{r}
 # Test if vaccination status differs by political party
