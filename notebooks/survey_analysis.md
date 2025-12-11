@@ -57,10 +57,10 @@ various survey statistics. Additional useful functions are:
 - `svytable()`: contingency tables, computes a weighted cross
   tabulation, which is useful for producing outputs for plots
 - `svychisq()`: chisquared tests of association for survey data,
-  computes first and second order Rao-Scott correction to the Peason
+  computes first and second order Rao-Scott correction to the Pearson
   chisquared test, can specify F stat (default), Chisq, Wald, adjWald,
   lincom, or saddlepoint
-- `svytest()`: one-sample or two-sample t-test
+- `svyttest()`: one-sample or two-sample t-test
 
 ## Resources
 
@@ -86,7 +86,7 @@ if(!require("pacman")) install.packages("pacman") #but first we have to install 
     Loading required package: pacman
 
 ``` r
-# This load packages for reading in data, transforming data, reshaping data, working with strings, summarizing data, analyzing surey data, reading in other data types, formatting percentages, structuring code, creating other types of plots, creating general plots, handlin factors
+# This load packages for reading in data, transforming data, reshaping data, working with strings, summarizing data, analyzing survey data, reading in other data types, formatting percentages, structuring code, creating other types of plots, creating general plots, handlin factors
 pacman::p_load(readr, plyr, dplyr, tidyr, stringr, skimr, survey, haven, scales, magrittr, apyramid, ggplot2, forcats)
 ```
 
@@ -201,7 +201,7 @@ dfp_rv_design <- svydesign(
 ``` r
 # adding a binary variable for vaccination status
 # in the data 1=Yes, received at least one COVID-19 vaccination, 2=No, I have not received a COVID-19 vaccination
-dfp_design<-update(dfp_design, vax_bin=if_else(vax == 1, 1, 0))
+dfp_design <- update(dfp_design, vax_bin=if_else(vax == 1, 1, 0))
 ```
 
 ## Calculate Weighted Means and Proportions
@@ -388,7 +388,7 @@ ggplot(wave_comparison, aes(x = wave, y = `I(corona2 <= 2)TRUE`)) +
 
 ``` r
 # Vaccine likelihood by region and age group 
-# ages are 18-98, grouped into 5 categories
+# ages are 18-98, grouped into 4 categories
 # 'How likely are you to get the [COVID-19] vaccine?'on scale of 1 (very likely) to 4 (very unlikely)
 vax_by_region_age <- svyby(
   formula = ~vax_likely,
@@ -417,7 +417,7 @@ ggplot(vax_by_region_age, aes(region_name, vax_likely, fill = age_group_name)) +
   theme_bw() +
   viridis::scale_fill_viridis(discrete = TRUE, option = 'D') +
   labs(x = 'Region',
-       y = 'Average Likelihood of Vaccination\n on a Scale 1 (Very Likely) to 5 (Very Unlikely)',
+       y = 'Average Likelihood of Vaccination\n on a Scale 1 (Very Likely) to 4 (Very Unlikely)',
        fill = 'Age Group',
        title = 'Likelihood of Getting Vaccinated by Region and Age',
        subtitle = "1 indicates 'very likely' to get vaccinated, 4 indicates 'very unlikely' to get vaccinated") +
@@ -479,7 +479,19 @@ concern_proportions
     4            4 0.06290224              4  0.04270591 not at all concerned
 
 ``` r
-# outputs: t: test statistics, negative = first group (male) has lower mean than the second group (female)
+svyby(~corona2,
+      by = ~gender,
+      design = dfp_design,
+      FUN = svymean,
+      na.rm = T)
+```
+
+      gender corona2          se
+    1      1 1.75930 0.010440743
+    2      2 1.62865 0.008066225
+
+``` r
+# outputs: t: test statistics
 # df: degrees of freedom, p-value, difference in mean, confidence interval
 svyttest(corona2 ~ gender, dfp_design)
 ```
@@ -516,7 +528,6 @@ dfp_design <- update(dfp_design, corona2_factor = dfp_data$corona2_factor)
 
 # Proportional odds model
 # gives the log odds ratio for the relationship between gender and covid concern
-# (negative = males have lower odds of being in high concern categories)
 svyolr(corona2_factor ~ gender, design = dfp_design)
 ```
 
@@ -537,6 +548,7 @@ svyolr(corona2_factor ~ gender, design = dfp_design)
 
 ``` r
 # Logistic regression: predict (binary outcome of) vaccination status based on multiple predictors
+# use survey-weighted generalized linear model function
 vax_model <- svyglm(
   vax_bin ~ age + gender + political_party + education,
   design = dfp_design,
