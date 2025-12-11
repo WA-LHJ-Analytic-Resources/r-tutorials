@@ -1,7 +1,7 @@
 # r-tutorials
 Tutorials for common R workflows, presented at R Office Hours
 
-Each notebook focuses on a different topic. The goal of the notebooks is to show examples of the topic on public health-style data. 
+Each notebook focuses on a different topic. The goal of the notebooks is to show examples of the topic on public health-style data. The notebooks try to show a variety of ways to do things and the various options available - the options are meant to be examples, but are not always best practices.
 All data needed to run these notebooks can be found in the data folder in this repo. The data is all publicly available, or is synthetic data that has been created to mimic real world public-health data.
 For each notebook there is a .qmd file, which is a Quarto document which can be used to run the code yourself, and there is a .md file, which is a markdown document which allows you to see the code and visualizations in their rendered form in this repo.
 

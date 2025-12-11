@@ -292,7 +292,7 @@ svyolr(corona2_factor ~ gender, design = dfp_design)
 vax_model <- svyglm(
   vax_bin ~ age + gender + political_party + education,
   design = dfp_design,
-  family = quasibinomial()
+  family = quasibinomial() #option to set the family type here (can see more about glm by looking at ?glm), probably usually would just use logit
 )
 
 # outputs: coefficients: log odds, standard error, t-value, p-value, significance
