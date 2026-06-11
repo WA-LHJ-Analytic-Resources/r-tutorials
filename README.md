@@ -35,6 +35,11 @@ The notebooks (found in the notebooks folder) are:
 - [Saloni's guide to data visualization](https://www.scientificdiscovery.dev/p/salonis-guide-to-data-visualization): an interesting blog post about data visualization, why it is important, and how to make it better. [Our World in Data](https://ourworldindata.org/) has a lot of good examples of clear data visualizations. 
 - [Create your own custom ggplot2 theme](https://rfortherestofus.com/2025/04/ggplot2-theme): a guide for creating a custom theme for ggplot2 plots, can be useful for establishing a consistent style guide for your team. There is also an [explainer for the BBC's custom ggplot2 theme](https://medium.com/bbc-visual-and-data-journalism/how-the-bbc-visual-and-data-journalism-team-works-with-graphics-in-r-ed0b35693535)
 
+## Resources for Learning Git
+- [Git Explainer](https://git-scm.com/video/what-is-git): intro to what is git
+- [GitHub Taining Workshop from CascadiaR Conference](https://github.com/cascadiarconf-gh-workshops/GutHub): interactive way to practice GitHub skills
+- [Learning Git Branching](https://learngitbranching.js.org/):visual and interactive resource for learning Git branching
+  
 ## Other Useful Resources & Packages
 - [Mockaroo](https://mockaroo.com/): useful for creating mock data sets
 - [esquisse](https://dreamrs.github.io/esquisse/): package for interactively exploring creating data visualizations
