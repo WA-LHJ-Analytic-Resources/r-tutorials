@@ -1,0 +1,486 @@
+---
+title: "Data Monitoring Tutorial"
+project:
+  type: default
+  output-dir: docs
+format:
+  gfm:
+    toc: true
+date: 2026-06-11
+author: Allie Warren, allison.warren
+editor: visual
+prefer-html: true
+---
+
+## Overview
+
+This tutorial shows a basic monitoring workflow for weekly reported public health count data.
+
+The example synthetic data are cumulative delayed weekly counts:
+
+-   `report_week`: week when the data extract/report was produced
+
+-   `reference_week`: week when the events occurred
+
+-   `ach_region`: Washington Accountable Community of Health region
+
+-   `sex`: `Female` or `Male`
+
+    `counts`: cumulative count for that `reference_week`, `ach_region`, and `sex` as of the `report_week`.
+
+The data has been synthetically produced with some errors and assumes counts are reported with some lag time (and a max lag of 10 weeks).
+
+The tutorial includes:
+
+1.  Rule-based validation with `validate`
+2.  One category-distribution check using a chi-squared test
+3.  Count monitoring to check that counts are increasing, fall within historical quantiles, and for sustained drift detection
+4.  Reporting-delay monitoring using percent of final counts
+
+```{r}
+# use pacman for loading/installing the other packages
+if(!require("pacman")) install.packages("pacman") 
+
+# This load packages
+pacman::p_load(readr, dplyr, tidyr, stringr, ggplot2, lubridate, validate, datadriftR)
+
+set.seed(123)
+```
+
+```{r}
+
+current_report_week <- ymd("2026-06-08")
+# set max data delay to 10 weeks
+max_delay_weeks <- 10L
+# get most recent date for complete data
+latest_complete_reference_week <- current_report_week - ((max_delay_weeks-1)*7)
+# get the previous 12 weeks of complete data - which we will evaluate compared to historic data
+recent_completed_start <- latest_complete_reference_week - (12*7)
+  
+# expected categories for ACH regions and sex fields
+expected_ach_regions <- c(
+  "Olympic Community of Health",
+  "North Sound ACH",
+  "North Central ACH",
+  "Better Health Together",
+  "HealthierHere",
+  "Elevate Health",
+  "Cascade Pacific Action Alliance",
+  "SWACH",
+  "Greater Columbia ACH"
+)
+
+expected_sex_values <- c("Female", "Male")
+```
+
+## Read in Data
+
+```{r}
+synthetic_counts <- read_csv("../data/synthetic_reporting_data.csv")
+
+current_extract <- synthetic_counts |>
+  filter(report_week == current_report_week)
+
+head(current_extract)
+```
+
+```{r}
+# create format for data alert data
+alert_table <- tibble(
+    check_type = character(),
+    alert_level = character(),
+    message = character())
+```
+
+## Validate expected values and categories
+
+The `validate` package is useful when you want explicit rules that can be run repeatedly on each incoming data extract.
+
+Here we check:
+
+-   `reference_week` is not after `report_week`;
+-   `counts` is present and nonnegative;
+-   `sex` is either `Female` or `Male` and not NA
+-   `ach_region` is one of the expected ACH regions.
+
+```{r}
+# create rule set
+validation_rules <- validator(
+  reference_week <= report_week,
+  !is.na(counts),
+  counts >= 0,
+  !is.na(sex),
+  sex %in% expected_sex_values,
+  !is.na(ach_region),
+  ach_region %in% expected_ach_regions)
+
+# apply ruleset to the dataset
+validation_results <- confront(synthetic_counts, validation_rules)
+
+# view if there are errors in the data
+validation_summary <- summary(validation_results)
+validation_summary |> select(items, fails, expression)
+
+# add error to alert table
+validation_alerts <- validation_summary |>
+  filter(fails > 0) |>
+  # transmute creates a new data frame with only the newly created fields
+  transmute(check_type = "validation checks",
+            alert_level = "warning",
+            message = str_glue("Data validation error: {expression}"))
+alert_table <- rbind(alert_table, validation_alerts)
+
+```
+
+view the violating data rows
+
+```{r}
+error_rows <- violating(synthetic_counts, validation_results)
+error_rows
+
+# Get logical matrix of passes/fails (rows = observations, cols = rules)
+status_matrix <- values(validation_results)
+
+# Row indices that fail ANY rule
+error_indices <- which(rowSums(!status_matrix, na.rm = TRUE) > 0)
+
+# remove the error rows
+synthetic_counts_clean <- synthetic_counts[-error_indices,]
+
+```
+
+## Check whether the distribution of a category changed
+
+For this tutorial, we compare the sex distribution in the most recent completed 12 reference weeks to the historical baseline.
+
+Because counts are delayed, we use only reference weeks that are at least `max_delay_weeks` old. That means delay week `max_delay_weeks` is observed and can be treated as final.
+
+The chi-squared test asks whether the distribution of counts across `Female` and `Male` differs between the historical and recent completed periods.
+
+```{r}
+# filter to complete data
+finalized_counts <- synthetic_counts_clean |>
+  # removing the most recent 9 weeks of data, which are incomplete
+  filter(reference_week <= latest_complete_reference_week,
+         # filter to final counts - cases reported as of 10 weeks after ref data
+         report_week == reference_week + weeks(max_delay_weeks))
+
+# get proportion of counts for each sex for historic reporting period and more recent period
+sex_distribution <- finalized_counts |>
+  mutate(period = if_else(reference_week >= recent_completed_start,
+                          "Recent completed weeks",
+                          "Historical baseline")) |>
+  summarise(counts = sum(counts), .by = c(period, sex)) |>
+  mutate(prop = counts / sum(counts), .by = period)
+
+sex_distribution
+```
+
+```{r}
+sex_matrix <- sex_distribution |>
+  select(period, sex, counts) |>
+  pivot_wider(names_from = sex, values_from = counts, values_fill = 0) |>
+  tibble::column_to_rownames("period") |>
+  as.matrix()
+
+# chi square test
+sex_chisq <- chisq.test(sex_matrix)
+
+sex_chisq_summary <- tibble(statistic = unname(sex_chisq$statistic),
+                            df = unname(sex_chisq$parameter),
+                            p_value = sex_chisq$p.value)
+
+sex_chisq_summary
+
+# add to alerts table if the distribution likely changed
+sex_distribution_alerts <- sex_chisq_summary |>
+  filter(p_value < 0.01) |>
+  transmute(check_type = "category_distribution",
+            alert_level = "warning",
+            message = str_glue("Chi-squared test suggests the recent sex distribution changed: p = {signif(p_value, 3)}"))
+
+alert_table <- rbind(alert_table, sex_distribution_alerts)
+```
+
+visualize the change in distribution
+
+```{r}
+sex_distribution |>
+  ggplot(aes(x = period, y = prop, fill = sex)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = scales::label_percent()) +
+  theme_bw() +
+  labs(title = "Sex distribution: historical baseline vs recent completed weeks",
+       x = NULL,
+       y = "Percent of counts",
+       fill = "Sex")
+```
+
+## Cumulative counts should not decrease
+
+For a fixed `reference_week`, `ach_region`, and `sex`, cumulative counts should only increase or stay the same as `report_week` advances (this assumption is likely not true in real data, but it is good to identify in your data as it may cause issues).
+
+```{r}
+# check whether the current weekly counts (for a given region and group) have decreased compared to the previous week
+decreasing_counts_issues <- synthetic_counts |>
+  filter(sex %in% expected_sex_values,
+         ach_region %in% expected_ach_regions) |>
+  arrange(ach_region, sex, reference_week, report_week) |>
+  mutate(previous_counts = lag(counts),
+         decrease = counts < previous_counts,
+         .by = c(ach_region, sex, reference_week)) |>
+  filter(decrease)
+
+decreasing_counts_issues
+
+# add to alert table
+decreasing_counts_alerts <- decreasing_counts_issues |>
+  transmute(check_type = "reporting_delay",
+            alert_level = "critical",
+            message = str_glue("Cumulative counts decreased from {previous_counts} to {counts} as reporting advanced to {report_week}"))
+
+alert_table <- rbind(alert_table, decreasing_counts_alerts)
+
+```
+
+visualize examples of the decreasing counts
+
+```{r}
+
+if (nrow(decreasing_counts_issues) > 0) {
+
+  decreasing_counts_data <- inner_join(synthetic_counts_clean, decreasing_counts_issues |> select(-report_week), by = c('reference_week', 'ach_region', 'sex'))
+
+  decreasing_counts_data |>
+    ggplot(aes(x = report_week, y = counts.x, color = paste0(ach_region, ", ", sex))) +
+    geom_line() +
+    geom_point() +
+    theme_bw() +
+    labs(title = "Example cumulative-count decrease",
+         x = "Report week",
+         y = "Cumulative counts", color = 'Data Grouping') +
+    facet_wrap(vars(ach_region), scales = "free_x")
+
+}
+```
+
+## Monitor counts against historical ranges
+
+Next we aggregate finalized counts by ACH region and reference week. We compare recent completed values to each ACH region's historical 5th and 95th percentile range.
+
+This is a simple range-based monitoring rule:
+
+-   below historical 5th percentile: unusually low;
+-   above historical 95th percentile: unusually high.
+
+```{r}
+# get weekly counts per ach region - using counts reported by 10 weeks after the reference data
+ach_week_counts <- finalized_counts |>
+  summarise(counts = sum(counts), .by = c(reference_week, ach_region))
+
+count_bounds <- ach_week_counts |>
+  filter(reference_week < recent_completed_start) |>
+  summarise(median_count = median(counts),
+            lower_bound = quantile(counts, 0.05),
+            upper_bound = quantile(counts, 0.95), .by = ach_region)
+
+# compare historic count ranges to the current counts
+recent_count_monitoring <- ach_week_counts |>
+  filter(reference_week >= recent_completed_start) |>
+  left_join(count_bounds, by = join_by(ach_region)) |>
+  mutate(count_alert = counts < lower_bound | counts > upper_bound,
+         direction = case_when(counts < lower_bound ~ "low",
+                               counts > upper_bound ~ "high",
+                               TRUE ~ "normal"))
+
+# view coutns outside of the normal range
+recent_count_monitoring |>
+  filter(count_alert)
+
+# add to alert table
+count_alerts <- recent_count_monitoring |>
+  filter(count_alert) |>
+  transmute(check_type = "count_range",
+            alert_level = "warning",
+            message = str_glue("{ach_region} count was {direction}: {counts} vs expected range ",
+      "{round(lower_bound)}-{round(upper_bound)} for week {reference_week}"))
+
+alert_table <- rbind(alert_table, count_alerts)
+
+```
+
+visualize counts compared to historic ranges
+
+```{r}
+
+ach_week_counts |> left_join(count_bounds, by = join_by(ach_region)) |>
+  ggplot(aes(x = reference_week, y = counts)) +
+  geom_ribbon(aes(ymin = lower_bound, ymax = upper_bound), alpha = 0.15) +
+  geom_line() +
+  # add vertical line for the mark the recent counts that we are evaluating
+  geom_vline(aes(xintercept = recent_completed_start), color = 'blue', linetype = 'dashed') +
+  # add points for counts that fall outside of the bounds
+  geom_point(data = recent_count_monitoring |> filter(count_alert),
+             aes(x = reference_week, y = counts), color = 'red') +
+  theme_bw() +
+  # create separate plots for each region
+  facet_wrap(vars(ach_region), scales = "free_y") +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(title = "ACH weekly counts with historical 5th–95th percentile ranges",
+       subtitle = "Points mark recent completed weeks outside historical ACH-specific ranges",
+       x = NULL,
+       y = "Finalized weekly counts")
+
+```
+
+## Detect sustained drift with Page-Hinkley
+
+Quantile checks are good at finding individual unusual values. Page-Hinkley is more useful for detecting sustained shifts in a numeric stream. It continuously monitors the cumulative deviation of incoming data from its running mean. If the deviation exceeds a predefined threshold it signals a change in the data distribution.
+
+Here we apply `datadriftR::detect_drift()` to statewide finalized weekly counts. To make tuning less dependent on the absolute count scale we z-score the counts.
+
+```{r}
+statewide_counts <- ach_week_counts |>
+  summarise(counts = sum(counts), .by = reference_week)
+
+hist_stats <- statewide_counts |>
+  filter(reference_week < recent_completed_start) |>
+  summarise(mu = mean(counts), sigma = sd(counts))
+
+statewide_counts <- statewide_counts |>
+  mutate(count_z = (counts - hist_stats$mu) / hist_stats$sigma)
+
+page_hinkley_results <- datadriftR::detect_drift(stream = statewide_counts$count_z,
+                                                 method = "page_hinkley",
+                                                 delta = 0.01,    # allowable slack in SD units
+                                                 threshold = 2.0,     # ~2 SD cumulative shift triggers alarm
+                                                 min_instances = 15) |>
+  as_tibble()
+
+page_hinkley_points <- page_hinkley_results |>
+  filter(type == "drift") |>
+  mutate(reference_week = statewide_counts$reference_week[index],
+         count_index = statewide_counts$count_index[index])
+
+page_hinkley_points
+
+# add to alert table
+page_hinkley_alerts <- page_hinkley_points |>
+  transmute(check_type = "page_hinkley",
+            alert_level = "info",
+            message = str_glue("Page-Hinkley detected sustained drift around {reference_week} in statewide counts"))
+
+alert_table <- rbind(alert_table, page_hinkley_alerts)
+
+```
+
+-   Page-Hinkley flags points where the stream appears to have shifted persistently.
+-   It is sensitive to tuning choices such as `delta`, `threshold`, and `min_instances`.
+-   It is usually better to run it on a monitored metric, rather than raw counts with very different scales.
+
+Visualize:
+
+```{r}
+statewide_counts |>
+  ggplot(aes(x = reference_week, y = count_z)) +
+  geom_line() +
+  geom_point(data = page_hinkley_points,
+             aes(x = reference_week, y = value), color = 'red') +
+  theme_bw() +
+  labs(title = "Page-Hinkley drift detection on z-scored statewide counts",
+       x = NULL,
+       y = "Statewide z-scored counts") 
+```
+
+## Monitor reporting delay using percent of final counts
+
+For cumulative delayed data, counts for a reference week should increase as more report weeks arrive.
+
+For completed reference weeks, define:
+
+\[ \text{percent final at delay } d = \frac{\text{cumulative count at delay } d}{\text{cumulative count at delay } 10} \]
+
+This uses only reference weeks that are at least 10 weeks old, so the delay-10 value is observed.
+
+```{r}
+
+delay_percent <- synthetic_counts_clean |>
+  filter(reference_week <= latest_complete_reference_week,
+         sex %in% expected_sex_values,
+         ach_region %in% expected_ach_regions) |>
+  mutate(delay_week = as.integer(report_week - reference_week) / 7L) |>
+  filter(delay_week >= 0, delay_week <= max_delay_weeks) |>
+  summarise(counts = sum(counts), .by = c(reference_week, delay_week)) |>
+  left_join(finalized_counts |>
+              summarise(final_counts = sum(counts), .by = reference_week),
+            by = join_by(reference_week)) |>
+  filter(final_counts > 0) |>
+  mutate(pct_final = counts / final_counts,
+         period = if_else(reference_week >= recent_completed_start,
+                          "Recent completed weeks",
+                          "Historical baseline"))
+
+delay_percent |>
+  arrange(desc(reference_week), delay_week) |>
+  head(15)
+
+
+```
+
+compare current data delays compared to historic delays
+
+```{r}
+historical_delay_band <- delay_percent |>
+  filter(period == "Historical baseline") |>
+  summarise(historical_mean = mean(pct_final),
+            historical_p05 = quantile(pct_final, 0.05),
+            historical_p95 = quantile(pct_final, 0.95),
+            .by = delay_week)
+
+recent_delay_line <- delay_percent |>
+  filter(period == "Recent completed weeks") |>
+  summarise(recent_mean = mean(pct_final), .by = delay_week)
+
+delay_monitoring <- recent_delay_line |>
+  left_join(historical_delay_band, by = join_by(delay_week)) |>
+  mutate(slow_reporting_alert = recent_mean < historical_p05)
+
+delay_monitoring
+
+# add to alert table
+delay_alerts <- delay_monitoring |>
+  filter(slow_reporting_alert) |>
+  transmute(check_type = "reporting_delay",
+            alert_level = "warning",
+            message = str_glue("Recent percent final is low at delay week {delay_week}: ",
+                               "{scales::percent(recent_mean, accuracy = 0.1)} vs historical 5th percentile ",
+                               "{scales::percent(historical_p05, accuracy = 0.1)}"))
+
+alert_table <- rbind(alert_table, delay_alerts)
+
+```
+
+visualize:
+
+```{r}
+historical_delay_band |>
+  ggplot(aes(x = delay_week)) +
+  geom_ribbon(aes(ymin = historical_p05, ymax = historical_p95), alpha = 0.15) +
+  geom_line(aes(y = historical_mean), linetype = "dashed") +
+  geom_line(data = recent_delay_line,
+            aes(y = recent_mean)) +
+  geom_point(data = delay_monitoring |> filter(slow_reporting_alert),
+             aes(y = recent_mean)) +
+  scale_y_continuous(labels = scales::label_percent()) +
+  theme_bw() +
+  labs(title = "Reporting delay: percent of final counts by delay week",
+       subtitle = "Ribbon = historical 5th–95th percentile; solid line = recent completed weeks",
+       x = "Delay week",
+       y = "Percent of final count" )
+```
+
+## View All Alerts
+
+```{r}
+alert_table
+```
