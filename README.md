@@ -27,6 +27,7 @@ The notebooks (found in the notebooks folder) are:
 - [Applied Epi Tutorials](https://www.appliedepi.org/resources/tutorials.html): Introductory R courses for Epis. You will need to make a free account before you can access the tutorials.
 - [Data Science for Environmental Health Online Course Material](https://daseh.org/materials_schedule.html): Materials from the DaSEH course, which is tailored for beginners and novices in R programming, with instructions on importing, wrangling, visualizing, and analyzing data.
 - [repicentre](https://epicentre-msf.github.io/repicentre//explore.html): open source platform for learning R for humanitarian contexts, with sessions on data visualization, exploration, importation, and manipulation, working with public health data and more.
+- [tidyverse cheatsheets](https://rstudio.github.io/cheatsheets/): quick guides to the different tidyverse packages, good for learning (or being reminded) of how to do common things with R
 
 ## Data Visualization Resources
 - [The R Graph Gallery](https://r-graph-gallery.com/): a collection of many different types of charts made with R, with a focus on using tidyverse and ggplot2, good for inspiration and showing the different possibilities of creating visualizations with R. Also shows the various [theme options](https://r-graph-gallery.com/192-ggplot-themes.html) when using ggplot2.
