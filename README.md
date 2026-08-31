@@ -19,6 +19,7 @@ The notebooks (found in the notebooks folder) are:
 - [Modern R Development Guide](https://gist.github.com/sj-io/3828d64d0969f2a0f05297e59e6c15ad): documentation of current best practices for R development, emphasizing modern tidyverse patterns, performance, and style
 - [The Epidemiologist R Handbook](https://epirhandbook.com/en/): R reference manual, includes common epidemiological examples
 - [R 4 Epidemiology](https://www.r4epi.com/): R textbook, with public health examples
+- [Posit Academy](https://academy.posit.co/): courses and living trainings, the 'Getting Started with R and the Tidyverse', 'Getting Started with renv', and 'Introduction to Shiny - R Focus' are applicable courses
 - [Population Health Data Science with R](https://bookdown.org/medepi/phds/): R textbook aimed at public health epidemiologists and health care analysts
 - [Statistical Inference via Data Science: A ModernDive into R and the Tidyverse](https://moderndive.com/index.html): examples of getting started in R, data visualization, wrangling, statistics
 - [R for Data Science](https://r4ds.had.co.nz/): R textbook for data science workflows and learning tidyverse conventions
